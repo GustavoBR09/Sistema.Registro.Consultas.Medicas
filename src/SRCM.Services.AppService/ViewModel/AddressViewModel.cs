@@ -25,10 +25,11 @@ namespace SRCM.Services.AppService.ViewModel
         [MaxLength(9, ErrorMessage = "O Código Postal Deve Ter No Máximo 9 Caracteres")]
         [DisplayName("Código Postal")]
         public string PostalCode { get; set; }
+
         [Required(ErrorMessage = "O Bairro é Obrigatório")]
         [MaxLength(50, ErrorMessage = "O Bairro Deve Ter No Máximo 50 Caracteres")]
         [DisplayName("Bairro")]
-        public string Neighbourhood { get; set; }
+        public string Neighborhood { get; set; }
         [MaxLength(150, ErrorMessage = "O Complemento Deve Ter No Máximo 150 Caracteres")]
         [DisplayName("Complemento")]
         public string Complement {  get; set; }
