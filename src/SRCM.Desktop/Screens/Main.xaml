@@ -1,0 +1,106 @@
+﻿<Window x:Class="SRCM.Desktop.Screens.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SRCM.Desktop.Screens"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Sistema de&#xD;&#xA;Registro de &#xD;&#xA;Consultas &#xD;&#xA;Médicas" HorizontalAlignment="Left" Margin="51,95,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="282" Height="201" Background="White"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="359,0,0,0" Width="8" Background="#FF84A6CE" BorderBrush="#FF84A6CE" Height="434" VerticalAlignment="Center"/>
+        <Border BorderThickness="1" Margin="579,-112,213,114" Background="#FF84A6CE" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="Usuário:" HorizontalAlignment="Left" Margin="400,23,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Width="77" Height="28" Background="White" FontSize="16"/>
+        <Label Content="Cargo:" HorizontalAlignment="Left" Margin="400,51,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Width="77" Height="28" Background="White" FontSize="16"/>
+        <Button Content="Consultas" HorizontalAlignment="Left" Height="227" Margin="400,134,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Médicos" HorizontalAlignment="Left" Height="100" Margin="592,261,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Pacientes" HorizontalAlignment="Left" Height="106" Margin="592,134,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Funcionários" HorizontalAlignment="Left" Height="37" Margin="400,377,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Relatórios" HorizontalAlignment="Left" Height="37" Margin="592,377,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Sair" HorizontalAlignment="Left" Height="26" Margin="683,65,0,0" VerticalAlignment="Top" Width="107" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>
