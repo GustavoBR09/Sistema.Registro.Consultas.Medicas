@@ -23,5 +23,10 @@ namespace SRCM.Desktop.Screens
         {
             InitializeComponent();
         }
+
+        private void NameTextBoxPatient_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

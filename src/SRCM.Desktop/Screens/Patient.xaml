@@ -7,6 +7,38 @@
         mc:Ignorable="d"
         Title="Patient" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LabelPatient" Content="Pacientes" HorizontalAlignment="Left" Margin="35,18,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="244" Height="60" Background="White"/>
+        <Button x:Name="RegisterPatient" Content="Novo Cadastro" HorizontalAlignment="Left" Height="37" Margin="612,44,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="SearchPatient" Content="Pesquisar" HorizontalAlignment="Left" Height="35" Margin="612,93,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="SearchTextBoxPatient" HorizontalAlignment="Left" Margin="35,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE"/>
+        <DataGrid x:Name="DataGridPatients" HorizontalAlignment="Center" Height="248" Margin="0,147,0,0" VerticalAlignment="Top" Width="732" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE"/>
+
     </Grid>
 </Window>

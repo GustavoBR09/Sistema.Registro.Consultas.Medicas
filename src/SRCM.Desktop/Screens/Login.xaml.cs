@@ -23,5 +23,9 @@ namespace SRCM.Desktop.Screens
         {
             InitializeComponent();
         }
+
+        private void SearchTextBoxAppointment_TextChanged(object sender, TextChangedEventArgs e)
+        {
+                    }
     }
 }

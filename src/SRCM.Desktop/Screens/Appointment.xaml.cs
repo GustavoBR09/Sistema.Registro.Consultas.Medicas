@@ -23,5 +23,10 @@ namespace SRCM.Desktop.Screens
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

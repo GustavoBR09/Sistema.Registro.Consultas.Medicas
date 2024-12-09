@@ -6,7 +6,75 @@
         xmlns:local="clr-namespace:SRCM.Desktop.Screens"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-    <Grid>
-        
+    <Grid RenderTransformOrigin="0.51,0.5">
+        <Label x:Name="LabelPatient" Content="Entrar" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="158" Height="60" Background="White"/>
+        <Button x:Name="RegisterAppointment" Content="Esqueci minha senha" HorizontalAlignment="Left" Height="35" Margin="224,389,0,0" VerticalAlignment="Top" Width="184" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="SearchAppointment" Content="Login" HorizontalAlignment="Left" Height="35" Margin="423,389,0,0" VerticalAlignment="Top" Width="131" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="NameTextBoxLogin" HorizontalAlignment="Left" Margin="244,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy" Content="Nome" HorizontalAlignment="Left" Margin="248,200,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="PasswordTextBoxLogin" HorizontalAlignment="Left" Margin="244,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy1" Content="Senha" HorizontalAlignment="Left" Margin="248,256,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="26" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Image HorizontalAlignment="Left" Height="98" Margin="351,86,0,0" VerticalAlignment="Top" Width="101" Source="/Screens/5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg"/>
+
     </Grid>
 </Window>

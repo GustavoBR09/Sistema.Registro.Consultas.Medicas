@@ -89,7 +89,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Sair" HorizontalAlignment="Left" Height="26" Margin="683,65,0,0" VerticalAlignment="Top" Width="107" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Button Content="Sair" HorizontalAlignment="Left" Height="26" Margin="683,65,0,0" VerticalAlignment="Top" Width="107" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -102,5 +102,6 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Image HorizontalAlignment="Left" Height="63" Margin="18,15,0,0" VerticalAlignment="Top" Width="65" Source="/Screens/5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg"/>
     </Grid>
 </Window>

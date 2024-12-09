@@ -7,6 +7,335 @@
         mc:Ignorable="d"
         Title="StaffRegister" Height="450" Width="800">
     <Grid>
-        
+        <Label x:Name="LabelPatient" Content="Cadastro de Funcionários" HorizontalAlignment="Left" Margin="44,15,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="619" Height="56" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="RegisterNewStaff" Content="Cadastrar e fazer novo cadastro" HorizontalAlignment="Left" Height="43" Margin="319,383,0,0" VerticalAlignment="Top" Width="299" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" BorderBrush="#FFD9D9D9">
+            <Button.Background>
+                <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="RegisterStaff" Content="Cadastrar" HorizontalAlignment="Left" Height="41" Margin="636,383,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFD9D9D9" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True">
+            <Button.Background>
+                <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="Back"  Content="Voltar" HorizontalAlignment="Left" Height="41" Margin="23,385,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" BorderBrush="#FFD9D9D9">
+            <Button.Background>
+                <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="NameTextBoxStaff" HorizontalAlignment="Left" Margin="56,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy11" Content="Nome" HorizontalAlignment="Left" Margin="58,68,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="DateTextBoxStaff" HorizontalAlignment="Left" Margin="56,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy" Content="Data de nascimento" HorizontalAlignment="Left" Margin="58,118,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="EmailTextBoxStaff" HorizontalAlignment="Left" Margin="56,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy1" Content="Email" HorizontalAlignment="Left" Margin="58,168,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="PasswordTextBoxStaff" HorizontalAlignment="Left" Margin="56,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy2" Content="Senha" HorizontalAlignment="Left" Margin="58,213,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="CPFTextBoxStaff" HorizontalAlignment="Left" Margin="56,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy3" Content="CPF" HorizontalAlignment="Left" Margin="58,264,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="WorkCardTextBoxStaff" HorizontalAlignment="Left" Margin="56,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy12" Content="Carteira de trabalho" HorizontalAlignment="Left" Margin="58,313,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="LabelPatient_Copy4" Content="Rua" HorizontalAlignment="Left" Margin="432,120,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="LabelPatient_Copy5" Content="Bairro" HorizontalAlignment="Left" Margin="433,168,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="24" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="ComplementTextBoxStaff" HorizontalAlignment="Left" Margin="429,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy6" Content="Complemento" HorizontalAlignment="Left" Margin="433,215,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="132" Height="24" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="LabelPatient_Copy7" Content="Cidade" HorizontalAlignment="Left" Margin="434,265,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="23" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="StreetTextBoxStaff" Margin="428,146,217,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="NumberTextBoxStaff" HorizontalAlignment="Left" Margin="594,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy8" Content="Número" HorizontalAlignment="Left" Margin="597,119,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="NeighborhoodTextBoxPatient" HorizontalAlignment="Left" Margin="429,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="CEPTextBoxStaff" HorizontalAlignment="Left" Margin="595,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="CityTextBoxStaff" HorizontalAlignment="Left" Margin="430,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="EstadoTextBoxStaff" HorizontalAlignment="Left" Margin="596,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy9" Content="CEP" HorizontalAlignment="Left" Margin="591,167,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="26" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="LabelPatient_Copy10" Content="Estado" HorizontalAlignment="Left" Margin="596,267,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="23" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="PositionTextBoxStaff" HorizontalAlignment="Left" Margin="429,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="20">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.206"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="LabelPatient_Copy13" Content="Profissão" HorizontalAlignment="Left" Margin="431,68,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.002"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.525"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
     </Grid>
 </Window>

@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Screens\5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg" />
     <None Remove="Screens\channels4_profile.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Screens\5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg" />
     <Resource Include="Screens\channels4_profile.jpg" />
   </ItemGroup>
 
