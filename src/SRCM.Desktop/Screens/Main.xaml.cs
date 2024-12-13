@@ -24,9 +24,40 @@ namespace SRCM.Desktop.Screens
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonAppointments_Click(object sender, RoutedEventArgs e)
+        {
+            Appointment appointment = new Appointment();
+            appointment.Show();
+        }
+
+        private void ButtonPatients_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+        }
+
+        private void ButtonDoctors_Click(object sender, RoutedEventArgs e)
+        {
+            Doctor doctor = new Doctor();
+            doctor.Show();
+        }
+
+        private void ButtonStaff_Click(object sender, RoutedEventArgs e)
+        {
+            Staff staff = new Staff();
+            staff.Show();
+        }
+
+        private void ButtonReports_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonLeave_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

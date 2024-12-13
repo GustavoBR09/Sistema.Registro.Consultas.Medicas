@@ -8,7 +8,7 @@
         Title="Appointment" Height="450" Width="800">
     <Grid>
         <Label x:Name="LabelPatient" Content="Consultas" HorizontalAlignment="Left" Margin="35,18,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="247" Height="60" Background="White"/>
-        <Button x:Name="RegisterAppointment" Content="Novo Cadastro" HorizontalAlignment="Left" Height="37" Margin="612,44,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+        <Button x:Name="ButtonRegisterAppointment" Content="Novo Cadastro" HorizontalAlignment="Left" Height="37" Margin="612,44,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="14" Click="ButtonRegisterAppointment_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -21,7 +21,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="SearchAppointment" Content="Pesquisar" HorizontalAlignment="Left" Height="35" Margin="612,93,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+        <Button x:Name="ButtonSearchAppointment" Content="Pesquisar" HorizontalAlignment="Left" Height="35" Margin="612,93,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="14" Click="ButtonSearchAppointment_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>

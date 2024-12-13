@@ -24,7 +24,14 @@ namespace SRCM.Desktop.Screens
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            AppointmentRegister appointmentRegister = new AppointmentRegister();
+            appointmentRegister.Show();
+            this.Close();
+        }
+
+        private void ButtonSearchAppointment_Click(object sender, RoutedEventArgs e)
         {
 
         }

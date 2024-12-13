@@ -8,7 +8,7 @@
         Title="Login" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.51,0.5">
         <Label x:Name="LabelPatient" Content="Entrar" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="158" Height="60" Background="White"/>
-        <Button x:Name="RegisterAppointment" Content="Esqueci minha senha" HorizontalAlignment="Left" Height="35" Margin="224,389,0,0" VerticalAlignment="Top" Width="184" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+        <Button x:Name="ButtonForgotPassword" Content="Esqueci minha senha" HorizontalAlignment="Left" Height="35" Margin="247,349,0,0" VerticalAlignment="Top" Width="184" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="14" Click="ButtonForgotPassword_Click" >
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -21,7 +21,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="SearchAppointment" Content="Login" HorizontalAlignment="Left" Height="35" Margin="423,389,0,0" VerticalAlignment="Top" Width="131" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+        <Button x:Name="ButtonLogin" Content="Login" HorizontalAlignment="Left" Height="35" Margin="436,349,0,0" VerticalAlignment="Top" Width="131" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="14" Click="ButtonLogin_Click" >
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>

@@ -11,20 +11,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Sistema de&#xD;&#xA;Registro de &#xD;&#xA;Consultas &#xD;&#xA;Médicas" HorizontalAlignment="Left" Margin="51,95,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="282" Height="201" Background="White"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="359,0,0,0" Width="8" Background="#FF84A6CE" BorderBrush="#FF84A6CE" Height="434" VerticalAlignment="Center"/>
-        <Border BorderThickness="1" Margin="579,-112,213,114" Background="#FF84A6CE" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Label Content="Usuário:" HorizontalAlignment="Left" Margin="400,23,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Width="77" Height="28" Background="White" FontSize="16"/>
-        <Label Content="Cargo:" HorizontalAlignment="Left" Margin="400,51,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Width="77" Height="28" Background="White" FontSize="16"/>
-        <Button Content="Consultas" HorizontalAlignment="Left" Height="227" Margin="400,134,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="359,0,0,0" Width="8" Background="#FF84A6CE" BorderBrush="#FF84A6CE"/>
+        <Label Content="Usuário" HorizontalAlignment="Left" Margin="400,23,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Width="260" Height="28" Background="White" FontSize="16"/>
+        <Label Content="Cargo" HorizontalAlignment="Left" Margin="400,51,0,0" VerticalAlignment="Top" FontFamily="Arial" Width="260" Height="28" Background="White" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="ButtonAppointments" Content="Consultas" HorizontalAlignment="Left" Height="227" Margin="400,134,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="16" Click="ButtonAppointments_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -37,7 +27,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Médicos" HorizontalAlignment="Left" Height="100" Margin="592,261,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Button x:Name="ButtonDoctors" Content="Médicos" HorizontalAlignment="Left" Height="100" Margin="592,261,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="16" Click="ButtonDoctors_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -50,7 +40,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Pacientes" HorizontalAlignment="Left" Height="106" Margin="592,134,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Button x:Name="ButtonPatients" Content="Pacientes" HorizontalAlignment="Left" Height="106" Margin="592,134,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="16" Click="ButtonPatients_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -63,7 +53,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Funcionários" HorizontalAlignment="Left" Height="37" Margin="400,377,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Button x:Name="ButtonStaff" Content="Funcionários" HorizontalAlignment="Left" Height="37" Margin="400,377,0,0" VerticalAlignment="Top" Width="169" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="16" Click="ButtonStaff_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -76,7 +66,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Relatórios" HorizontalAlignment="Left" Height="37" Margin="592,377,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="16">
+        <Button x:Name="ButtonReports" Content="Relatórios" HorizontalAlignment="Left" Height="37" Margin="592,377,0,0" VerticalAlignment="Top" Width="182" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="16" Click="ButtonReports_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -89,7 +79,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Sair" HorizontalAlignment="Left" Height="26" Margin="683,65,0,0" VerticalAlignment="Top" Width="107" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" Click="Button_Click" FontFamily="Arial Black" FontSize="14">
+        <Button x:Name="ButtonLeave" Content="Sair" HorizontalAlignment="Left" Height="26" Margin="683,65,0,0" VerticalAlignment="Top" Width="107" BorderBrush="#FFDDDDDD" RenderTransformOrigin="1,0" BorderThickness="1,1,1,1" FontFamily="Arial Black" FontSize="14" Click="ButtonLeave_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="1"/>
             </Button.Background>
@@ -103,5 +93,6 @@
             </Button.RenderTransform>
         </Button>
         <Image HorizontalAlignment="Left" Height="63" Margin="18,15,0,0" VerticalAlignment="Top" Width="65" Source="/Screens/5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg"/>
+        <Rectangle HorizontalAlignment="Left" Height="114" Margin="365,-3,0,0" Stroke="#FF84A6CE" VerticalAlignment="Top" Width="433"/>
     </Grid>
 </Window>

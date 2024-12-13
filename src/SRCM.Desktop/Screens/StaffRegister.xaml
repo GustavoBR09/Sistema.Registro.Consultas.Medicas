@@ -17,7 +17,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="RegisterNewStaff" Content="Cadastrar e fazer novo cadastro" HorizontalAlignment="Left" Height="43" Margin="319,383,0,0" VerticalAlignment="Top" Width="299" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" BorderBrush="#FFD9D9D9">
+        <Button x:Name="ButtonRegisterNewStaff" Content="Cadastrar e fazer novo cadastro" HorizontalAlignment="Left" Height="43" Margin="319,383,0,0" VerticalAlignment="Top" Width="299" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" BorderBrush="#FFD9D9D9" Click="ButtonRegisterNewStaff_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>
@@ -30,7 +30,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="RegisterStaff" Content="Cadastrar" HorizontalAlignment="Left" Height="41" Margin="636,383,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFD9D9D9" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True">
+        <Button x:Name="ButtonRegisterStaff" Content="Cadastrar" HorizontalAlignment="Left" Height="41" Margin="636,383,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFD9D9D9" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" Click="ButtonRegisterStaff_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>
@@ -43,7 +43,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="Back"  Content="Voltar" HorizontalAlignment="Left" Height="41" Margin="23,385,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" Click="Button_Click" FontFamily="Arial Black" FontSize="16" BorderBrush="#FFD9D9D9">
+        <Button x:Name="ButtonBack"  Content="Voltar" HorizontalAlignment="Left" Height="41" Margin="23,385,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" BorderBrush="#FFD9D9D9" Click="ButtonBack_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>

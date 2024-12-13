@@ -24,8 +24,16 @@ namespace SRCM.Desktop.Screens
             InitializeComponent();
         }
 
-        private void SearchTextBoxAppointment_TextChanged(object sender, TextChangedEventArgs e)
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-                    }
+            Main main = new Main();
+            main.Show();
+            this.Close();
+        }
+
+        private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

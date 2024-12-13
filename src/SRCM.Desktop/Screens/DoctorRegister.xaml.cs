@@ -23,5 +23,22 @@ namespace SRCM.Desktop.Screens
         {
             InitializeComponent();
         }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            Doctor doctor = new Doctor();
+            doctor.Show();
+            this.Close();
+        }
+
+        private void ButtonRegisterNewDoctor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonRegisterDoctor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

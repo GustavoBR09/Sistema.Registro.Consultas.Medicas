@@ -24,9 +24,29 @@ namespace SRCM.Desktop.Screens
             InitializeComponent();
         }
 
-        private void NameTextBoxPatient_TextChanged(object sender, TextChangedEventArgs e)
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
+            Appointment appointment = new Appointment();
+            appointment.Show();
+            this.Close();
+        }
 
+        private void ButtonRegisterNewAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBoxPatient.SelectedIndex = 0;
+            ComboBoxDoctor.SelectedIndex = 0;
+            ComboBoxStatus.SelectedIndex = 0;
+            ComboBoxType.SelectedIndex = 0;
+            DatePickerData.SelectedDate = DateTime.Now;
+            ObservationTextBox.Clear();
+        }
+
+        private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Salvar dados
+            Appointment appointment = new Appointment();
+            appointment.Show();
+            this.Close();
         }
     }
 }
