@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Services.AppService.Services;
-using SRCM.Services.AppService.ViewModel;
+using SRCM.Domain.Shared.ViewModel;
 
 namespace SRCM.API.Controllers
 {

@@ -34,10 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SRCM.Core\SRCM.Core.csproj" />
     <ProjectReference Include="..\SRCM.Domain\SRCM.Domain.csproj" />
     <ProjectReference Include="..\SRCM.Infra.Identity\SRCM.Infra.Identity.csproj" />

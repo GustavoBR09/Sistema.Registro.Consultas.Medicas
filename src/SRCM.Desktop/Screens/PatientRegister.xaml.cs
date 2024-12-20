@@ -25,19 +25,34 @@ namespace SRCM.Desktop.Screens
         }
 
 
-        private void ButtonRegisterPatient1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ButtonRegisterNewPatient_Click(object sender, RoutedEventArgs e)
         {
+            NameTextBoxPatient.Clear();
+            DatePickerData.SelectedDate = DateTime.Now;
+            EmailTextBoxPatient.Clear();
+            CPFTextBoxPatient.Clear();
+            StreetTextBoxPatient.Clear();
+            NeighborTextBoxPatient.Clear();
+            NumberTextBoxPatient.Clear();
+            CEPTextBoxPatient.Clear();
+            ComplementTextBoxPatient.Clear();
+            CityTextBoxPatient.Clear();
+            StateTextBoxPatient.Clear();
 
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Close();
+        }
 
+        private void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Close();
         }
     }
 }

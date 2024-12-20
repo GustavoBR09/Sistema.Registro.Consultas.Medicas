@@ -26,7 +26,9 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterStaff_Click(object sender, RoutedEventArgs e)
         {
-
+            StaffRegister staffRegister = new StaffRegister();
+            staffRegister.Show();
+            this.Close();
         }
 
         private void ButtonSearchStaff_Click(object sender, RoutedEventArgs e)

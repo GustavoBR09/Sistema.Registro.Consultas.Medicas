@@ -33,12 +33,26 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterNewDoctor_Click(object sender, RoutedEventArgs e)
         {
-
+            NameTextBoxDoctor.Clear();
+            DatePickerData.SelectedDate = DateTime.Now;
+            EmailTextBoxDoctor.Clear();
+            PasswordDoctor.Clear();
+            CPFTextBoxDoctor.Clear();
+            CRMTextBoxDoctor.Clear();
+            ComboBoxSpecialty.SelectedIndex = 0;
+            StreetTextBoxDoctor.Clear();
+            NeighborhoodTextBoxDoctor.Clear();
+            ComplementTextBoxDoctor.Clear();
+            NumberTextBoxDoctor.Clear();
+            CEPTextBoxDoctor.Clear();
+            CityTextBoxDoctor.Clear();
         }
 
         private void ButtonRegisterDoctor_Click(object sender, RoutedEventArgs e)
         {
-
+            Doctor doctor = new Doctor();
+            doctor.Show();
+            this.Close();
         }
     }
 }

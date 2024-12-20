@@ -1,5 +1,5 @@
 ﻿using SRCM.Domain.Entities;
-using SRCM.Services.AppService.ViewModel;
+using SRCM.Domain.Shared.ViewModel;
 using System.Linq.Expressions;
 
 namespace SRCM.Services.AppService.Interfaces

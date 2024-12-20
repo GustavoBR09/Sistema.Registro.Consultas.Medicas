@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace SRCM.Services.AppService.ViewModel
+namespace SRCM.Domain.Shared.ViewModel
 {
     public class AddressViewModel
     {

@@ -93,6 +93,16 @@
             </Button.RenderTransform>
         </Button>
         <Image HorizontalAlignment="Left" Height="63" Margin="18,15,0,0" VerticalAlignment="Top" Width="65" Source="/Screens/5094832-cuidados-de-saude-hospital-clinica-medico-logo-imagem-gratis-vetor.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="114" Margin="365,-3,0,0" Stroke="#FF84A6CE" VerticalAlignment="Top" Width="433"/>
+        <Rectangle HorizontalAlignment="Left" Height="114" Margin="365,-3,0,0" VerticalAlignment="Top" Width="433"/>
+        <Border BorderThickness="1" Margin="367,109,-1,0" Background="#FF84A6CE" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="8" VerticalAlignment="Top">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.083"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SRCM.Domain.Entities;
-using SRCM.Services.AppService.ViewModel;
+using SRCM.Domain.Shared.ViewModel;
 
 namespace SRCM.Services.AppService.AutoMapper
 {

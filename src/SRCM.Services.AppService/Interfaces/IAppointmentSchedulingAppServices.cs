@@ -1,5 +1,5 @@
 ﻿using SRCM.Domain.Entities;
-using SRCM.Services.AppService.ViewModel;
+using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

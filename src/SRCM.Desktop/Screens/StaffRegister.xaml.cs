@@ -26,17 +26,34 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterStaff_Click(object sender, RoutedEventArgs e)
         {
-
+            Staff staff = new Staff();
+            staff.Show();
+            this.Close();
         }
 
         private void ButtonRegisterNewStaff_Click(object sender, RoutedEventArgs e)
         {
-
+            NameTextBoxStaff.Clear();
+            EmailTextBoxStaff.Clear();
+            PasswordStaff.Clear();
+            DatePickerData.SelectedDate = DateTime.Now;
+            CPFTextBoxStaff.Clear();
+            WorkCardTextBoxStaff.Clear();
+            ComboBoxStaff.SelectedIndex = 0;
+            StreetTextBoxStaff.Clear();
+            NumberTextBoxStaff.Clear();
+            NeighborhoodTextBoxStaff.Clear();
+            ComplementTextBoxStaff.Clear();
+            CEPTextBoxStaff.Clear();
+            CityTextBoxStaff.Clear();
+            EstadoTextBoxStaff.Clear();
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Staff staff = new Staff();
+            staff.Show();
+            this.Close();
         }
     }
 }

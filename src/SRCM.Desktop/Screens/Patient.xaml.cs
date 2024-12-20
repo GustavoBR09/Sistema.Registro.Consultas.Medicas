@@ -27,7 +27,9 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
         {
-
+            PatientRegister patientRegister = new PatientRegister();
+            patientRegister.Show();
+            this.Close();
         }
 
         private void ButtonSearchPatient_Click(object sender, RoutedEventArgs e)

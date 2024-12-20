@@ -4,7 +4,7 @@ using SRCM.Domain.Entities;
 using SRCM.Domain.Interfaces;
 using SRCM.Domain.Shared.Transaction;
 using SRCM.Services.AppService.Interfaces;
-using SRCM.Services.AppService.ViewModel;
+using SRCM.Domain.Shared.ViewModel;
 using System.Linq.Expressions;
 
 namespace SRCM.Services.AppService.Services
