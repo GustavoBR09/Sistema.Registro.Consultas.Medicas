@@ -53,8 +53,8 @@ namespace SRCM.Services.AppService.Services
 
         public IEnumerable<DoctorViewModel> Search(Expression<Func<Doctor, bool>> expression)
         {
-            var doctor = _doctorRepository.Search(expression);
-            var doctorViewModel = _mapper.Map<IEnumerable<DoctorViewModel>>(expression);
+            var doctors = _doctorRepository.Search(expression);
+            var doctorViewModel = _mapper.Map<IEnumerable<DoctorViewModel>>(doctors);
             return doctorViewModel;
         }
 

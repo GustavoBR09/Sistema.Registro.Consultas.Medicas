@@ -6,7 +6,7 @@ using SRCM.Domain.Shared.ViewModel;
 
 namespace SRCM.API.Controllers
 {
-    [Route("api/appointmentScheduling")]
+    [Route("api/appointment-scheduling")]
     [ApiController]
     public class AppointmentSchedulingController : ControllerBase
     {

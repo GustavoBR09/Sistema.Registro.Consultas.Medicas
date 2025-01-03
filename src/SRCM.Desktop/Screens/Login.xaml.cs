@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Refit;
+using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,16 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Login : Window
     {
-        public Login()
+        private readonly IAPIService _apiService;
+        public Login(IAPIService apiService)
         {
             InitializeComponent();
+            _apiService = apiService;
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            Main main = new Main();
+            Main main = new Main(_apiService);
             main.Show();
             this.Close();
         }
