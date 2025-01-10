@@ -29,13 +29,13 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonAppointments_Click(object sender, RoutedEventArgs e)
         {
-            Appointment appointment = new Appointment();
+            Appointment appointment = new Appointment(_apiService);
             appointment.Show();
         }
 
         private void ButtonPatients_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = new Patient();
+            Patient patient = new Patient(_apiService);
             patient.Show();
         }
 
@@ -47,7 +47,7 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonStaff_Click(object sender, RoutedEventArgs e)
         {
-            Staff staff = new Staff();
+            Staff staff = new Staff(_apiService);
             staff.Show();
         }
 

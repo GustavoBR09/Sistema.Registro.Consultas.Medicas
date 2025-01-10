@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Appointment : Window
     {
-        public Appointment()
+        private readonly IAPIService _apiService;
+        public Appointment(IAPIService apiService)
         {
             InitializeComponent();
+            _apiService = apiService;
         }
 
         private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
@@ -34,6 +37,12 @@ namespace SRCM.Desktop.Screens
         private void ButtonSearchAppointment_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var appointments = await _apiService.GetAppointments();
+            DataGridAppointment.ItemsSource = appointments;
         }
     }
 }

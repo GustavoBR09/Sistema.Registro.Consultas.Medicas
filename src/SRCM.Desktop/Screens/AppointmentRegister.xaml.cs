@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,16 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class AppointmentRegister : Window
     {
-        public AppointmentRegister()
+        private readonly IAPIService _apiService;
+        public AppointmentRegister(IAPIService apiService)
         {
             InitializeComponent();
+            _apiService = apiService;
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            Appointment appointment = new Appointment();
+            Appointment appointment = new Appointment(_apiService);
             appointment.Show();
             this.Close();
         }
@@ -44,7 +47,7 @@ namespace SRCM.Desktop.Screens
         private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
         {
             //TODO: Salvar dados
-            Appointment appointment = new Appointment();
+            Appointment appointment = new Appointment(_apiService);
             appointment.Show();
             this.Close();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Patient : Window
     {
-        public Patient()
+        private readonly IAPIService _APIService;
+        public Patient(IAPIService apiService)
         {
             InitializeComponent();
+            _APIService = apiService;
         }
 
 
@@ -35,6 +38,12 @@ namespace SRCM.Desktop.Screens
         private void ButtonSearchPatient_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var patient = await _APIService.GetPatients();
+            DataGridPatient.ItemsSource = patient;
         }
     }
 }

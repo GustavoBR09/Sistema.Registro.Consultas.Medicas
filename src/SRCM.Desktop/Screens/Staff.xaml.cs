@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Staff : Window
     {
-        public Staff()
+        private readonly IAPIService _APIService;
+        public Staff(IAPIService apiService)
         {
             InitializeComponent();
+            _APIService = apiService;
         }
 
         private void ButtonRegisterStaff_Click(object sender, RoutedEventArgs e)
@@ -34,6 +37,12 @@ namespace SRCM.Desktop.Screens
         private void ButtonSearchStaff_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var staff = await _APIService.GetStaffs();
+            DataGridStaff.ItemsSource = staff;
         }
     }
 }
