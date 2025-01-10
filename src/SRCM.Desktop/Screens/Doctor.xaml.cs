@@ -42,7 +42,7 @@ namespace SRCM.Desktop.Screens
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var doctors = await _apiService.GetDoctors();
-            
+            DataGridDoctor.ItemsSource = doctors;
         }
     }
 }
