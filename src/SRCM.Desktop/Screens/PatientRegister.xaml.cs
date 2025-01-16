@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class PatientRegister : Window
     {
-        public PatientRegister()
+        private readonly IAPIService _apiService;
+        public PatientRegister(IAPIService apiService)
         {
             InitializeComponent();
+            _apiService = apiService;
         }
 
 
@@ -43,14 +46,14 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = new Patient();
+            Patient patient = new Patient(_apiService);
             patient.Show();
             this.Close();
         }
 
         private void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = new Patient();
+            Patient patient = new Patient(_apiService);
             patient.Show();
             this.Close();
         }

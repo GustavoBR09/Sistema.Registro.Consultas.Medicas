@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRCM.Desktop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,16 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class StaffRegister : Window
     {
-        public StaffRegister()
+        private readonly IAPIService _apiService;
+        public StaffRegister(IAPIService apiService)
         {
             InitializeComponent();
+            _apiService = apiService;
         }
 
         private void ButtonRegisterStaff_Click(object sender, RoutedEventArgs e)
         {
-            Staff staff = new Staff();
+            Staff staff = new Staff(_apiService);
             staff.Show();
             this.Close();
         }
@@ -51,7 +54,7 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            Staff staff = new Staff();
+            Staff staff = new Staff(_apiService);
             staff.Show();
             this.Close();
         }

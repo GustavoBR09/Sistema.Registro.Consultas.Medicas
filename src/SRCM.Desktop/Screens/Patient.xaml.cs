@@ -20,17 +20,17 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Patient : Window
     {
-        private readonly IAPIService _APIService;
+        private readonly IAPIService _apiService;
         public Patient(IAPIService apiService)
         {
             InitializeComponent();
-            _APIService = apiService;
+            _apiService = apiService;
         }
 
 
         private void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
         {
-            PatientRegister patientRegister = new PatientRegister();
+            PatientRegister patientRegister = new PatientRegister(_apiService);
             patientRegister.Show();
             this.Close();
         }
@@ -42,8 +42,8 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var patient = await _APIService.GetPatients();
-            DataGridPatient.ItemsSource = patient;
+            var patient = await _apiService.GetPatients();
+            DataGridPatients.ItemsSource = patient;
         }
     }
 }

@@ -38,13 +38,13 @@
         <DataGrid x:Name="DataGridDoctor" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="248" Margin="0,147,0,0" VerticalAlignment="Top" Width="732" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="Id" Header="Id" Visibility="Hidden"/>
-                <DataGridTextColumn x:Name="Name" Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn x:Name="Name" Header="Nome" Binding="{Binding Name}"/>
                 <DataGridTextColumn x:Name="Cpf" Header="CPF" Binding="{Binding Cpf}"/>
                 <DataGridTextColumn x:Name="Crm" Header="CRM" Binding="{Binding Crm}"/>
                 <DataGridTextColumn x:Name="Email" Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn x:Name="AddressId" Header="AddressId" Visibility="Hidden"/>
-                <DataGridTextColumn x:Name="Birthday" Header="Birthday" Binding="{Binding Birthday}"/>
-                <DataGridTextColumn x:Name="Specialty" Header="Specialty" Binding="{Binding Specialty}"/>
+                <DataGridTextColumn x:Name="Birthday" Header="Data de Nascimento" Binding="{Binding Birthday}"/>
+                <DataGridTextColumn x:Name="Specialty" Header="Especialidade" Binding="{Binding Specialty}"/>
                 <DataGridTextColumn x:Name="Address" Header="Address" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>

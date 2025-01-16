@@ -20,16 +20,16 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class Staff : Window
     {
-        private readonly IAPIService _APIService;
+        private readonly IAPIService _apiService;
         public Staff(IAPIService apiService)
         {
             InitializeComponent();
-            _APIService = apiService;
+            _apiService = apiService;
         }
 
         private void ButtonRegisterStaff_Click(object sender, RoutedEventArgs e)
         {
-            StaffRegister staffRegister = new StaffRegister();
+            StaffRegister staffRegister = new StaffRegister(_apiService);
             staffRegister.Show();
             this.Close();
         }
@@ -41,7 +41,7 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var staff = await _APIService.GetStaffs();
+            var staff = await _apiService.GetStaffs();
             DataGridStaff.ItemsSource = staff;
         }
     }

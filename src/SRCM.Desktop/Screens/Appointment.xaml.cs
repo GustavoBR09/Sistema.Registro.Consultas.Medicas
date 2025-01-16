@@ -29,7 +29,7 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentRegister appointmentRegister = new AppointmentRegister();
+            AppointmentRegister appointmentRegister = new AppointmentRegister(_apiService);
             appointmentRegister.Show();
             this.Close();
         }
