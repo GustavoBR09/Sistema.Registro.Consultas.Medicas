@@ -45,7 +45,7 @@
                 <DataGridTextColumn x:Name="AddressId" Header="AddressId" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="Birthday" Header="Data de Nascimento" Binding="{Binding Birthday}"/>
                 <DataGridTextColumn x:Name="Specialty" Header="Especialidade" Binding="{Binding Specialty}"/>
-                <DataGridTextColumn x:Name="Address" Header="Address" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="Address" Header="Endereço" Binding="{Binding Address}"/>
             </DataGrid.Columns>
         </DataGrid>
 

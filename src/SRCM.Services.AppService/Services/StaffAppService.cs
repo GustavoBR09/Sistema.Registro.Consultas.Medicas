@@ -6,6 +6,7 @@ using SRCM.Domain.Shared.Transaction;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Domain.Shared.ViewModel;
 using System.Linq.Expressions;
+using SRCM.Domain.Shared.Models;
 
 namespace SRCM.Services.AppService.Services
 {
@@ -36,6 +37,12 @@ namespace SRCM.Services.AppService.Services
             return staffViewModel;
         }
 
+        public StaffModel GetModelById(Guid id)
+        {
+            Staff staff = _staffRepository.GetById(id);
+            StaffModel staffModel = _mapper.Map<StaffModel>(staff);
+            return staffModel;
+        }
         public void Remove(Guid id)
         {
             _staffRepository.Remove(id);
@@ -48,18 +55,18 @@ namespace SRCM.Services.AppService.Services
             Commit();
         }
 
-        public IEnumerable<StaffViewModel> Search(Expression<Func<Staff, bool>> expression)
+        public IEnumerable<StaffModel> Search(Expression<Func<Staff, bool>> expression)
         {
             var staff = _staffRepository.Search(expression);
-            var staffViewModel = _mapper.Map<IEnumerable<StaffViewModel>>(staff);
-            return staffViewModel;
+            var staffModel = _mapper.Map<IEnumerable<StaffModel>>(staff);
+            return staffModel;
         }
 
-        public IEnumerable<StaffViewModel> Search(Expression<Func<Staff, bool>> expression, int pageNumber, int pageSize)
+        public IEnumerable<StaffModel> Search(Expression<Func<Staff, bool>> expression, int pageNumber, int pageSize)
         {
             var staffs = _staffRepository.Search(expression, pageNumber, pageSize);
-            var staffsViewModel = _mapper.Map<IEnumerable<StaffViewModel>>(staffs);
-            return staffsViewModel;
+            var staffsModel = _mapper.Map<IEnumerable<StaffModel>>(staffs);
+            return staffsModel;
         }
 
         public StaffViewModel Update(StaffViewModel viewModel)

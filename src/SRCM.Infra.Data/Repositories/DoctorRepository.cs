@@ -1,4 +1,5 @@
-﻿using SRCM.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SRCM.Domain.Entities;
 using SRCM.Domain.Interfaces;
 using SRCM.Infra.Data.Context;
 using System;
@@ -12,8 +13,10 @@ namespace SRCM.Infra.Data.Repositories
 {
     public class DoctorRepository : Repository<Doctor>, IDoctorRepository
     {
-        public DoctorRepository(SRCMDbContext context) : base(context)
+        private readonly IAddressRepository _addressRepository;
+        public DoctorRepository(SRCMDbContext context, IAddressRepository addressRepository) : base(context)
         {
+            _addressRepository = addressRepository;
         }
 
         public Doctor Add(Doctor entity)
@@ -24,7 +27,7 @@ namespace SRCM.Infra.Data.Repositories
 
         public Doctor GetById(Guid id)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var doctor = context.FirstOrDefault(c => c.Id == id);
             return doctor;
         }
@@ -48,14 +51,15 @@ namespace SRCM.Infra.Data.Repositories
 
         public IEnumerable<Doctor> Search(Expression<Func<Doctor, bool>> predicate)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var entities = context.Where(predicate);
+
             return entities;
         }
 
         public IEnumerable<Doctor> Search(Expression<Func<Doctor, bool>> predicate, int pageNumber, int pageSize)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var entities = context.Where(predicate).Skip((pageNumber - 1) * pageSize).Take(pageSize);
             return entities;
         }

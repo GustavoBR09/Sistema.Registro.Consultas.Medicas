@@ -1,5 +1,7 @@
 ﻿using SRCM.Domain.Shared.ViewModel;
 using Refit;
+using SRCM.Domain.Shared;
+using SRCM.Domain.Shared.Models;
 
 namespace SRCM.Desktop.Interfaces
 {
@@ -58,7 +60,7 @@ namespace SRCM.Desktop.Interfaces
 
         #region Doctor
         [Get("/api/doctor")]
-        Task<IEnumerable<DoctorViewModel>> GetDoctors();
+        Task<IEnumerable<DoctorModel>> GetDoctors();
 
         [Get("/api/doctor/{id}")]
         Task<IEnumerable<DoctorViewModel>> GetDoctorById(Guid id);
@@ -92,10 +94,10 @@ namespace SRCM.Desktop.Interfaces
 
         #region Staff
         [Get("/api/staff")]
-        Task<IEnumerable<StaffViewModel>> GetStaffs();
+        Task<IEnumerable<StaffModel>> GetStaffs();
 
         [Get("/api/staff/{id}")]
-        Task<IEnumerable<StaffViewModel>> GetStaffById(Guid id);
+        Task<IEnumerable<StaffModel>> GetStaffById(Guid id);
 
         [Post("/api/staff")]
         Task<StaffViewModel> AddStaff([Body] StaffViewModel staff);

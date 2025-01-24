@@ -35,6 +35,6 @@ namespace SRCM.Domain.Shared.ViewModel
         public Positions Position { get; set; }
         [DisplayName("Endereço")]
 
-        public AddressViewModel Address { get; set; }
+        public AddressViewModel? Address { get; set; }
     }
 }

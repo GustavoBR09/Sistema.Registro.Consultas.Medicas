@@ -25,6 +25,9 @@ namespace SRCM.Domain.Entities
 
         }
 
+        public void SetAddress(Address address) { 
+            Address = address;
+        }
         protected Doctor() { }
 
         public string Name { get; private set; }

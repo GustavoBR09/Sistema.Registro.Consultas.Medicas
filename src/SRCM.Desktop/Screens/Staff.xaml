@@ -44,6 +44,7 @@
                 <DataGridTextColumn x:Name="Email" Header="Email" Binding="{Binding Email}"/>
                 <DataGridTextColumn x:Name="Birthday" Header="Data de Nascimento" Binding="{Binding Birthday}"/>
                 <DataGridTextColumn x:Name="Position" Header="Profissão" Binding="{Binding Position}"/>
+                <DataGridTextColumn x:Name="Address" Header="Endereço" Binding="{Binding Address}"/>
             </DataGrid.Columns>
         </DataGrid>
 

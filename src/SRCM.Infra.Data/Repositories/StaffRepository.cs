@@ -1,4 +1,5 @@
-﻿using SRCM.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SRCM.Domain.Entities;
 using SRCM.Domain.Interfaces;
 using SRCM.Infra.Data.Context;
 using System;
@@ -24,7 +25,7 @@ namespace SRCM.Infra.Data.Repositories
 
         public Staff GetById(Guid id)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var staff = context.FirstOrDefault(c => c.Id == id);
             return staff;
         }
@@ -48,14 +49,14 @@ namespace SRCM.Infra.Data.Repositories
 
         public IEnumerable<Staff> Search(Expression<Func<Staff, bool>> predicate)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var entities = context.Where(predicate);
             return entities;
         }
 
         public IEnumerable<Staff> Search(Expression<Func<Staff, bool>> predicate, int pageNumber, int pageSize)
         {
-            var context = DbSet.AsQueryable();
+            var context = DbSet.AsQueryable().Include("Address");
             var entities = context.Where(predicate).Skip((pageNumber - 1) * pageSize).Take(pageSize);
             return entities;
         }

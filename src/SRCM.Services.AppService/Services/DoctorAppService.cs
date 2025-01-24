@@ -6,6 +6,7 @@ using SRCM.Domain.Shared.Transaction;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Domain.Shared.ViewModel;
 using System.Linq.Expressions;
+using SRCM.Domain.Shared;
 
 namespace SRCM.Services.AppService.Services
 {
@@ -39,6 +40,12 @@ namespace SRCM.Services.AppService.Services
             return doctorViewModel;
         }
 
+        public DoctorModel GetModelById(Guid id)
+        {
+            Doctor doctor = _doctorRepository.GetById(id);
+            DoctorModel model = _mapper.Map<DoctorModel>(doctor);
+            return model;
+        }
         public void Remove(Guid id)
         {
             _doctorRepository.Remove(id);
@@ -51,18 +58,18 @@ namespace SRCM.Services.AppService.Services
             Commit();
         }
 
-        public IEnumerable<DoctorViewModel> Search(Expression<Func<Doctor, bool>> expression)
+        public IEnumerable<DoctorModel> Search(Expression<Func<Doctor, bool>> expression)
         {
             var doctors = _doctorRepository.Search(expression);
-            var doctorViewModel = _mapper.Map<IEnumerable<DoctorViewModel>>(doctors);
-            return doctorViewModel;
+            var doctorModels = _mapper.Map<IEnumerable<DoctorModel>>(doctors);
+            return doctorModels;
         }
 
-        public IEnumerable<DoctorViewModel> Search(Expression<Func<Doctor, bool>> expression, int pageNumber, int pageSize)
+        public IEnumerable<DoctorModel> Search(Expression<Func<Doctor, bool>> expression, int pageNumber, int pageSize)
         {
             var doctor = _doctorRepository.Search(expression, pageNumber, pageSize);
-            var doctorViewModel = _mapper.Map<IEnumerable<DoctorViewModel>>(doctor);
-            return doctorViewModel;
+            var doctorModels = _mapper.Map<IEnumerable<DoctorModel>>(doctor);
+            return doctorModels;
         }
 
         public DoctorViewModel Update(DoctorViewModel viewModel)
