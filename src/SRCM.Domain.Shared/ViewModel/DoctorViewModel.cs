@@ -11,16 +11,19 @@ namespace SRCM.Domain.Shared.ViewModel
         [MaxLength(250, ErrorMessage = "O Nome Deve Ter No Máximo 250 Caracteres")]
         [DisplayName("Nome")]
         public string Name { get; set; }
+
         [Required(ErrorMessage = "O CPF É Obrigatório")]
-        [MaxLength(11, ErrorMessage = "O CPF Deve Ter No Máximo 250 Caracteres")]
+        [MaxLength(11, ErrorMessage = "O CPF Deve Ter No Máximo 11 Caracteres")]
         [DisplayName("CPF")]
         public string Cpf { get; set; }
+
         [Required(ErrorMessage = "O CRM É Obrigatório")]
-        [MaxLength(10, ErrorMessage = "O CRM Deve Ter No Máximo 250 Caracteres")]
+        [MaxLength(6, ErrorMessage = "O CRM Deve Ter No Máximo 6 Caracteres")]
         [DisplayName("CRM")]
         public string Crm { get; set; }
+
         [Required(ErrorMessage = "O Email É Obrigatório")]
-        [MaxLength(100, ErrorMessage = "O Email Deve Ter No Máximo 250 Caracteres")]
+        [MaxLength(100, ErrorMessage = "O Email Deve Ter No Máximo 100 Caracteres")]
         [DisplayName("Email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "O Endereço É Obrigatório")]
@@ -29,12 +32,12 @@ namespace SRCM.Domain.Shared.ViewModel
         [Required(ErrorMessage = "O Aniversário É Obrigatório")]
         [DisplayName("Aniversário")]
         public DateTime Birthday { get; set; }
-        [Required(ErrorMessage = "A Especialidade É Obrigatório")]
-        [EnumDataType(typeof(Specialties), ErrorMessage = "Esta Especialidade é Inválida")]
+        //[Required(ErrorMessage = "A Especialidade É Obrigatório")]
+        //[EnumDataType(typeof(Specialties), ErrorMessage = "Esta Especialidade é Inválida")]
         [DisplayName("Especialidade")]
-        public Specialties Specialty { get; set; }
+        public int Specialty { get; set; }
         [DisplayName("Endereço")]
 
-        public AddressViewModel Address { get; set; }
+        public AddressViewModel? Address { get; set; }
     }
 }

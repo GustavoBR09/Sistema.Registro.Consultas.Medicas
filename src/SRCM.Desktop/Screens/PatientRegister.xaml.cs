@@ -1,4 +1,5 @@
 ﻿using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,8 +52,19 @@ namespace SRCM.Desktop.Screens
             this.Close();
         }
 
-        private void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
+        private async void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
         {
+            AddressViewModel addressViewModel = new AddressViewModel();
+            addressViewModel.City = CityTextBoxPatient.Text;
+            addressViewModel.State = StateTextBoxPatient.Text;
+            addressViewModel.Street = StreetTextBoxPatient.Text;
+            addressViewModel.Number = NumberTextBoxPatient.Text;
+            addressViewModel.Complement = ComplementTextBoxPatient.Text;
+            addressViewModel.Neighborhood = NeighborTextBoxPatient.Text;
+            addressViewModel.PostalCode = CEPTextBoxPatient.Text;
+
+            addressViewModel = await _apiService.AddAddress(addressViewModel);
+
             Patient patient = new Patient(_apiService);
             patient.Show();
             this.Close();

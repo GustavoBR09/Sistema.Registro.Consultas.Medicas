@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SRCM.Core\SRCM.Core.csproj" />
     <ProjectReference Include="..\SRCM.Domain.Shared\SRCM.Domain.Shared.csproj" />
   </ItemGroup>
 

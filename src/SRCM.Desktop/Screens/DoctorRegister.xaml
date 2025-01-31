@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SRCM.Desktop.Screens"
         mc:Ignorable="d"
-        Title="DoctorRegister" Height="450" Width="800">
+        Title="DoctorRegister" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="687*"/>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="55*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="LabelPatient" Content="Cadastro de Médicos" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="619" Height="56" Background="White" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient" Content="Cadastro de Médicos" HorizontalAlignment="Left" Margin="27,0,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="43" Width="619" Height="56" Background="White" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -24,7 +27,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="ButtonRegisterNewDoctor" Content="Cadastrar e fazer novo cadastro" HorizontalAlignment="Left" Height="43" Margin="309,371,0,0" VerticalAlignment="Top" Width="299" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" BorderBrush="#FFD9D9D9" Click="ButtonRegisterNewDoctor_Click">
+        <Button x:Name="ButtonRegisterNewDoctor" Content="Cadastrar e fazer novo cadastro" HorizontalAlignment="Left" Height="43" Margin="302,371,0,0" VerticalAlignment="Top" Width="299" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" BorderBrush="#FFD9D9D9" Click="ButtonRegisterNewDoctor_Click" Grid.Column="1">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>
@@ -37,7 +40,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="ButtonRegisterDoctor" Content="Cadastrar" HorizontalAlignment="Left" Height="41" Margin="626,371,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFD9D9D9" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" Click="ButtonRegisterDoctor_Click">
+        <Button x:Name="ButtonRegisterDoctor" Content="Cadastrar" HorizontalAlignment="Left" Height="41" Margin="619,371,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FFD9D9D9" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" Padding="0,1,1,1" ScrollViewer.CanContentScroll="True" Click="ButtonRegisterDoctor_Click" Grid.ColumnSpan="3" Grid.Column="1">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>
@@ -50,7 +53,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="ButtonBack"  Content="Voltar" HorizontalAlignment="Left" Height="41" Margin="13,373,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" BorderBrush="#FFD9D9D9" Click="ButtonBack_Click">
+        <Button x:Name="ButtonBack"  Content="Voltar" HorizontalAlignment="Left" Height="41" Margin="6,373,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="1,0" BorderThickness="4,4,4,4" FontFamily="Arial Black" FontSize="16" BorderBrush="#FFD9D9D9" Click="ButtonBack_Click" Grid.Column="1">
             <Button.Background>
                 <SolidColorBrush Color="#FFD9D9D9" Opacity="1"/>
             </Button.Background>
@@ -63,7 +66,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox x:Name="NameTextBoxDoctor" HorizontalAlignment="Left" Margin="45,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="NameTextBoxDoctor" HorizontalAlignment="Left" Margin="38,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -73,7 +76,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy11" Content="Nome" HorizontalAlignment="Left" Margin="48,51,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy11" Content="Nome" HorizontalAlignment="Left" Margin="41,51,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -83,7 +86,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy" Content="Data de nascimento" HorizontalAlignment="Left" Margin="48,103,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="27" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy" Content="Data de nascimento" HorizontalAlignment="Left" Margin="41,103,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="27" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -93,7 +96,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="EmailTextBoxDoctor" HorizontalAlignment="Left" Margin="45,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="EmailTextBoxDoctor" HorizontalAlignment="Left" Margin="38,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -103,7 +106,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy1" Content="Email" HorizontalAlignment="Left" Margin="48,158,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy1" Content="Email" HorizontalAlignment="Left" Margin="41,158,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -113,7 +116,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy2" Content="Senha" HorizontalAlignment="Left" Margin="47,209,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy2" Content="Senha" HorizontalAlignment="Left" Margin="40,209,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -123,7 +126,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="CPFTextBoxDoctor" HorizontalAlignment="Left" Margin="46,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="29">
+        <TextBox x:Name="CPFTextBoxDoctor" HorizontalAlignment="Left" Margin="39,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="29" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -133,7 +136,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy3" Content="CPF" HorizontalAlignment="Left" Margin="50,258,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy3" Content="CPF" HorizontalAlignment="Left" Margin="43,258,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -143,7 +146,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="CRMTextBoxDoctor" HorizontalAlignment="Left" Margin="47,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="CRMTextBoxDoctor" HorizontalAlignment="Left" Margin="40,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -153,7 +156,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy12" Content="CRM" HorizontalAlignment="Left" Margin="50,309,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy12" Content="CRM" HorizontalAlignment="Left" Margin="43,309,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="180" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -163,7 +166,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy4" Content="Rua" HorizontalAlignment="Left" Margin="410,110,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy4" Content="Rua" HorizontalAlignment="Left" Margin="403,110,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -173,7 +176,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy5" Content="Bairro" HorizontalAlignment="Left" Margin="410,160,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="24" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy5" Content="Bairro" HorizontalAlignment="Left" Margin="403,160,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="24" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -183,7 +186,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="ComplementTextBoxDoctor" HorizontalAlignment="Left" Margin="407,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="27">
+        <TextBox x:Name="ComplementTextBoxDoctor" HorizontalAlignment="Left" Margin="400,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="27" Grid.ColumnSpan="2" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -193,7 +196,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy6" Content="Complemento" HorizontalAlignment="Left" Margin="411,213,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="132" Height="24" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy6" Content="Complemento" HorizontalAlignment="Left" Margin="404,213,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="132" Height="24" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -203,7 +206,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy7" Content="Cidade" HorizontalAlignment="Left" Margin="411,262,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="23" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy7" Content="Cidade" HorizontalAlignment="Left" Margin="404,262,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="23" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -213,7 +216,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="StreetTextBoxDoctor" Margin="407,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" HorizontalAlignment="Left" Width="151">
+        <TextBox x:Name="StreetTextBoxDoctor" Margin="400,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" HorizontalAlignment="Left" Width="151" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -223,7 +226,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="NumberTextBoxDoctor" HorizontalAlignment="Left" Margin="573,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="NumberTextBoxDoctor" HorizontalAlignment="Left" Margin="566,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -233,7 +236,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy8" Content="Número" HorizontalAlignment="Left" Margin="581,111,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy8" Content="Número" HorizontalAlignment="Left" Margin="574,111,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="80" Height="26" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -243,7 +246,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="NeighborhoodTextBoxDoctor" HorizontalAlignment="Left" Margin="408,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="NeighborhoodTextBoxDoctor" HorizontalAlignment="Left" Margin="401,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -253,7 +256,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="CEPTextBoxDoctor" HorizontalAlignment="Left" Margin="574,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="CEPTextBoxDoctor" HorizontalAlignment="Left" Margin="567,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -263,7 +266,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="CityTextBoxDoctor" HorizontalAlignment="Left" Margin="408,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="CityTextBoxDoctor" HorizontalAlignment="Left" Margin="401,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -273,7 +276,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="EstadoTextBoxDoctor" HorizontalAlignment="Left" Margin="574,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30">
+        <TextBox x:Name="EstadoTextBoxDoctor" HorizontalAlignment="Left" Margin="567,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Grid.Column="1">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -283,7 +286,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="LabelPatient_Copy9" Content="CEP" HorizontalAlignment="Left" Margin="578,162,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="26" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy9" Content="CEP" HorizontalAlignment="Left" Margin="571,162,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="26" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -293,7 +296,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy10" Content="Estado" HorizontalAlignment="Left" Margin="574,262,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="23" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy10" Content="Estado" HorizontalAlignment="Left" Margin="567,262,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="191" Height="23" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -303,7 +306,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="LabelPatient_Copy13" Content="Especialidade" HorizontalAlignment="Left" Margin="408,53,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="118" Height="25" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="LabelPatient_Copy13" Content="Especialidade" HorizontalAlignment="Left" Margin="401,53,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="14" Width="118" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -313,7 +316,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <DatePicker x:Name="DatePickerData" HorizontalAlignment="Left" Margin="46,125,0,0" Padding="4,4,4,4" BorderThickness="4,4,4,4" Width="321" Height="31" VerticalAlignment="Top" FontSize="12">
+        <DatePicker x:Name="DatePickerData" HorizontalAlignment="Left" Margin="39,125,0,0" Padding="4,4,4,4" BorderThickness="4,4,4,4" Width="321" Height="31" VerticalAlignment="Top" FontSize="12" Grid.Column="1">
             <DatePicker.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
                     <GradientStop Color="#FFA3AEB9"/>
@@ -323,8 +326,8 @@
                 </LinearGradientBrush>
             </DatePicker.BorderBrush>
         </DatePicker>
-        <ComboBox x:Name="ComboBoxSpecialty" Margin="406,76,0,0" BorderBrush="#FF84A6CE" BorderThickness="4,4,4,4" HorizontalAlignment="Left" Width="318" Height="30" VerticalAlignment="Top" FontSize="12"/>
-        <PasswordBox x:Name="PasswordDoctor" HorizontalAlignment="Left" Margin="46,231,0,0" VerticalAlignment="Top" Width="321" BorderBrush="#FF84A6CE" BorderThickness="4,4,4,4" Height="30" FontSize="12"/>
+        <ComboBox x:Name="ComboBoxSpecialty" Margin="399,76,0,0" BorderBrush="#FF84A6CE" BorderThickness="4,4,4,4" HorizontalAlignment="Left" Width="318" Height="30" VerticalAlignment="Top" FontSize="12" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <PasswordBox x:Name="PasswordDoctor" HorizontalAlignment="Left" Margin="39,231,0,0" VerticalAlignment="Top" Width="321" BorderBrush="#FF84A6CE" BorderThickness="4,4,4,4" Height="30" FontSize="12" Grid.Column="1"/>
 
     </Grid>
 </Window>
