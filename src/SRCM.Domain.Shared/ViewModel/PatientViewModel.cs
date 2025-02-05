@@ -11,12 +11,12 @@ namespace SRCM.Domain.Shared.ViewModel
         [DisplayName("Nome")]
         public string Name { get; set; }
         [Required(ErrorMessage = "O Aniversário É Obrigatório")]
-        [DisplayName("Aniverdário")]
+        [DisplayName("Aniversário")]
         public DateTime Birthday { get; set; }
         [Required(ErrorMessage = "O CPF É Obrigatório")]
         [MaxLength(11, ErrorMessage = "O CPF Deve Ter No Máximo 11 Caracteres")]
-        [DisplayName("CpPF")]
-        public string Cpf { get; set; }
+        [DisplayName("CPF")]
+        public string CPF { get; set; }
         [Required(ErrorMessage = "O Email É Obrigatório")]
         [MaxLength(100, ErrorMessage = "O Email Deve Ter No Máximo 100 Caracteres")]
         [DisplayName("Email")]
@@ -26,6 +26,6 @@ namespace SRCM.Domain.Shared.ViewModel
         public Guid AddressId { get; set; }
         [DisplayName("Endereço")]
 
-        public AddressViewModel Address { get; set; }
+        public AddressViewModel? Address { get; set; }
     }
 }

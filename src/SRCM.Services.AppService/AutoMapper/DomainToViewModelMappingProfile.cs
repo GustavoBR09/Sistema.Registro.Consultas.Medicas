@@ -32,6 +32,13 @@ namespace SRCM.Services.AppService.AutoMapper
                 : ""))
                 .ForMember(x => x.Position, m => m.MapFrom(a => a.Position.ToString()))
                 .ForMember(x => x.Birthday, m => m.MapFrom(a => a.Birthday.ToString("dd/MM/yyyy")));
+
+            CreateMap<Patient, PatientModel>()
+                .ForMember(x => x.Address, m => m.MapFrom(a => a.Address != null ?
+                $"{a.Address.Street}, {a.Address.Complement}, " +
+                $"{a.Address.Number}, {a.Address.Neighborhood}, {a.Address.City}, {a.Address.State}"
+                : ""))
+                .ForMember(x => x.Birthday, m => m.MapFrom(a => a.Birthday.ToString("dd/MM/yyyy")));
         }
     }
 }

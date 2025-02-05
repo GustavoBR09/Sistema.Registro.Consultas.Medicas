@@ -63,7 +63,7 @@ namespace SRCM.Desktop.Interfaces
         Task<IEnumerable<DoctorModel>> GetDoctors();
 
         [Get("/api/doctor/{id}")]
-        Task<IEnumerable<DoctorViewModel>> GetDoctorById(Guid id);
+        Task<DoctorViewModel> GetDoctorById(Guid id);
 
         [Post("/api/doctor")]
         Task<DoctorViewModel> AddDoctor([Body] DoctorViewModel doctor);
@@ -77,10 +77,10 @@ namespace SRCM.Desktop.Interfaces
 
         #region Patient
         [Get("/api/patient")]
-        Task<IEnumerable<PatientViewModel>> GetPatients();
+        Task<IEnumerable<PatientModel>> GetPatients();
 
         [Get("/api/patient/{id}")]
-        Task<IEnumerable<PatientViewModel>> GetPatientById(Guid id);
+        Task<PatientViewModel> GetPatientById(Guid id);
 
         [Post("/api/patient")]
         Task<PatientViewModel> AddPatient([Body] PatientViewModel patient);
@@ -97,7 +97,7 @@ namespace SRCM.Desktop.Interfaces
         Task<IEnumerable<StaffModel>> GetStaffs();
 
         [Get("/api/staff/{id}")]
-        Task<IEnumerable<StaffModel>> GetStaffById(Guid id);
+        Task<StaffViewModel> GetStaffById(Guid id);
 
         [Post("/api/staff")]
         Task<StaffViewModel> AddStaff([Body] StaffViewModel staff);

@@ -43,8 +43,9 @@
                 <DataGridTextColumn x:Name="Id" Header="Id" Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="Name" Header="Nome" Binding="{Binding Name}"/>
                 <DataGridTextColumn x:Name="Birthday" Header="Data de Nascimento" Binding="{Binding Birthday}"/>
-                <DataGridTextColumn x:Name="Cpf" Header="CPF" Binding="{Binding Cpf}"/>
+                <DataGridTextColumn x:Name="CPF" Header="CPF" Binding="{Binding CPF}"/>
                 <DataGridTextColumn x:Name="Email" Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="Address" Header="Endereço" Binding="{Binding Address}"/>
             </DataGrid.Columns>
         </DataGrid>
 

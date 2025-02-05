@@ -23,11 +23,21 @@ namespace SRCM.Desktop.Screens
     /// </summary>
     public partial class DoctorRegister : Window
     {
+        private readonly Guid? _id = null;
         private readonly IAPIService _apiService;
+        private Guid _addressId;
         public DoctorRegister(IAPIService apiService)
         {
             InitializeComponent();
             _apiService = apiService;
+        }
+
+        public DoctorRegister(IAPIService apiService, Guid id)
+        {
+            InitializeComponent();
+            _apiService = apiService;
+            _id = id;
+            UpdateMode();
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -100,6 +110,28 @@ namespace SRCM.Desktop.Screens
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ComboBoxSpecialty.ItemsSource = EnumHelp.EnumToList<Specialties>();
+        }
+
+        private async void UpdateMode()
+        {
+            //TODO 1. Buscar informações do banco4
+            var doctor = await _apiService.GetDoctorById(_id.Value);
+            // 2. Inserir informações nos campos
+            NameTextBoxDoctor.Text = doctor.Name;
+            DatePickerData.SelectedDate = doctor.Birthday;
+            EmailTextBoxDoctor.Text = doctor.Email;
+            CPFTextBoxDoctor.Text = doctor.Cpf;
+            CRMTextBoxDoctor.Text = doctor.Crm;
+            ComboBoxSpecialty.SelectedValue = doctor.Specialty;
+            StreetTextBoxDoctor.Text = doctor.Address.Street;
+            ComplementTextBoxDoctor.Text = doctor.Address.Complement;
+            NumberTextBoxDoctor.Text = doctor.Address.Number;
+            NeighborhoodTextBoxDoctor.Text = doctor.Address.Neighborhood;
+            CEPTextBoxDoctor.Text = doctor.Address.PostalCode;
+            CityTextBoxDoctor.Text = doctor.Address.City;
+            EstadoTextBoxDoctor.Text= doctor.Address.State;
+
+            _addressId = doctor.AddressId;
         }
     }
 }

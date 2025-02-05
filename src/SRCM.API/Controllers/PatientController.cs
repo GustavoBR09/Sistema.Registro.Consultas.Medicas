@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Services.AppService.Services;
 using SRCM.Domain.Shared.ViewModel;
+using SRCM.Domain.Shared.Models;
 
 namespace SRCM.API.Controllers
 {
@@ -17,13 +18,13 @@ namespace SRCM.API.Controllers
             _patientAppServices = patientAppServices;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<PatientViewModel>> Get()
+        public ActionResult<IEnumerable<PatientModel>> Get()
         {
             var result = _patientAppServices.Search(a => true);
             return Ok(result);
         }
         [HttpGet("{id}")]
-        public ActionResult<PatientViewModel> Get(Guid id)
+        public ActionResult<PatientModel> Get(Guid id)
         {
             var result = _patientAppServices.GetById(id);
             return Ok(result);

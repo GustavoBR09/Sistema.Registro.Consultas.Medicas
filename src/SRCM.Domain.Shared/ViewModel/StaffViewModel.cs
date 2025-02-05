@@ -29,10 +29,8 @@ namespace SRCM.Domain.Shared.ViewModel
         [Required(ErrorMessage = "O Aniversário É Obrigatório")]
         [DisplayName("Birthday")]
         public DateTime Birthday { get; set; }
-        [Required(ErrorMessage = "O Cargo é Obrigatório")]
-        [EnumDataType(typeof(Positions), ErrorMessage = "Este Cargo é Inválido")]
         [DisplayName("Posição")]
-        public Positions Position { get; set; }
+        public int Position { get; set; }
         [DisplayName("Endereço")]
 
         public AddressViewModel? Address { get; set; }

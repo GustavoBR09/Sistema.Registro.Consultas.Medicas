@@ -11,6 +11,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using SRCM.Domain.Shared.Models;
 
 namespace SRCM.Services.AppService.Services
 {
@@ -43,6 +44,12 @@ namespace SRCM.Services.AppService.Services
             return patientViewModel;
         }
 
+        public PatientModel GetModelById(Guid id)
+        {
+            Patient patient = _patientRepository.GetById(id);
+            PatientModel patientModel = _mapper.Map<PatientModel>(patient);
+            return patientModel;
+        }
         public void Remove(Guid id)
         {
             _patientRepository.Remove(id);
@@ -55,18 +62,18 @@ namespace SRCM.Services.AppService.Services
             Commit();
         }
 
-        public IEnumerable<PatientViewModel> Search(Expression<Func<Patient, bool>> expression)
+        public IEnumerable<PatientModel> Search(Expression<Func<Patient, bool>> expression)
         {
             var patients = _patientRepository.Search(expression);
-            var patientViewModel = _mapper.Map<IEnumerable<PatientViewModel>>(patients);
-            return patientViewModel;
+            var patientModel = _mapper.Map<IEnumerable<PatientModel>>(patients);
+            return patientModel;
         }
 
-        public IEnumerable<PatientViewModel> Search(Expression<Func<Patient, bool>> expression, int pageNumber, int pageSize)
+        public IEnumerable<PatientModel> Search(Expression<Func<Patient, bool>> expression, int pageNumber, int pageSize)
         {
             var patients = _patientRepository.Search(expression, pageNumber, pageSize);
-            var patientsViewModel = _mapper.Map<IEnumerable<PatientViewModel>>(patients);
-            return patientsViewModel;
+            var patientsModel = _mapper.Map<IEnumerable<PatientModel>>(patients);
+            return patientsModel;
         }
 
         public PatientViewModel Update(PatientViewModel viewModel)

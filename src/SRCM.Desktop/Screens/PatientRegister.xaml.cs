@@ -1,8 +1,11 @@
-﻿using SRCM.Desktop.Interfaces;
+﻿using SRCM.Core.Utils;
+using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.Enums;
 using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,15 +25,27 @@ namespace SRCM.Desktop.Screens
     public partial class PatientRegister : Window
     {
         private readonly IAPIService _apiService;
+        private readonly Guid? _id = null;
+        private Guid _addressId;
         public PatientRegister(IAPIService apiService)
         {
             InitializeComponent();
             _apiService = apiService;
         }
 
-
-        private void ButtonRegisterNewPatient_Click(object sender, RoutedEventArgs e)
+        public PatientRegister(IAPIService apiService, Guid id)
         {
+            InitializeComponent();
+            _apiService = apiService;
+            _id = id;
+            UpdateMode();
+        }
+
+
+        private async void ButtonRegisterNewPatient_Click(object sender, RoutedEventArgs e)
+        {
+            await NewPatient();
+
             NameTextBoxPatient.Clear();
             DatePickerData.SelectedDate = DateTime.Now;
             EmailTextBoxPatient.Clear();
@@ -54,6 +69,21 @@ namespace SRCM.Desktop.Screens
 
         private async void ButtonRegisterPatient_Click(object sender, RoutedEventArgs e)
         {
+            await NewPatient();
+
+            Patient patient = new Patient(_apiService);
+            patient.Show();
+            this.Close();
+        }
+
+        private async Task NewPatient()
+        {
+            if (DatePickerData.SelectedDate == null)
+            {
+                MessageBox.Show("A data de nascimento é obrigatória.");
+                return;
+            }
+
             AddressViewModel addressViewModel = new AddressViewModel();
             addressViewModel.City = CityTextBoxPatient.Text;
             addressViewModel.State = StateTextBoxPatient.Text;
@@ -65,9 +95,40 @@ namespace SRCM.Desktop.Screens
 
             addressViewModel = await _apiService.AddAddress(addressViewModel);
 
-            Patient patient = new Patient(_apiService);
-            patient.Show();
-            this.Close();
+            PatientViewModel patientViewModel = new PatientViewModel();
+            patientViewModel.Name = NameTextBoxPatient.Text;
+            patientViewModel.Email = EmailTextBoxPatient.Text;
+
+            patientViewModel.Birthday = DatePickerData.SelectedDate!.Value;
+            patientViewModel.CPF = CPFTextBoxPatient.Text;
+            patientViewModel.AddressId = addressViewModel.Id;
+
+            patientViewModel = await _apiService.AddPatient(patientViewModel);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void UpdateMode()
+        {
+            //TODO 1. Buscar informações do banco4
+            var patient = await _apiService.GetPatientById(_id.Value);
+            // 2. Inserir informações nos campos
+            NameTextBoxPatient.Text = patient.Name;
+            DatePickerData.SelectedDate = patient.Birthday;
+            EmailTextBoxPatient.Text = patient.Email;
+            CPFTextBoxPatient.Text = patient.CPF;
+            StreetTextBoxPatient.Text = patient.Address.Street;
+            ComplementTextBoxPatient.Text = patient.Address.Complement;
+            NumberTextBoxPatient.Text = patient.Address.Number;
+            NeighborTextBoxPatient.Text = patient.Address.Neighborhood;
+            CEPTextBoxPatient.Text = patient.Address.PostalCode;
+            CityTextBoxPatient.Text = patient.Address.City;
+            StateTextBoxPatient.Text = patient.Address.State;
+
+            _addressId = patient.AddressId;
         }
     }
 }
