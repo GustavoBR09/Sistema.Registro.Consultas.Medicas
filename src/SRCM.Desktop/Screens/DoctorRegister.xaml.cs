@@ -104,7 +104,16 @@ namespace SRCM.Desktop.Screens
             doctorViewModel.Specialty = (int)ComboBoxSpecialty.SelectedValue;
             doctorViewModel.AddressId = addressViewModel.Id;
 
-            doctorViewModel = await _apiService.AddDoctor(doctorViewModel);
+            if (_id != null)
+            {
+                doctorViewModel.Id = _id.Value;
+                doctorViewModel = await _apiService.UpdateDoctor(doctorViewModel);
+            }
+            else
+            {
+                doctorViewModel = await _apiService.AddDoctor(doctorViewModel);
+            }
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -122,7 +131,7 @@ namespace SRCM.Desktop.Screens
             EmailTextBoxDoctor.Text = doctor.Email;
             CPFTextBoxDoctor.Text = doctor.Cpf;
             CRMTextBoxDoctor.Text = doctor.Crm;
-            ComboBoxSpecialty.SelectedValue = doctor.Specialty;
+            ComboBoxSpecialty.SelectedValue = (Specialties)doctor.Specialty;
             StreetTextBoxDoctor.Text = doctor.Address.Street;
             ComplementTextBoxDoctor.Text = doctor.Address.Complement;
             NumberTextBoxDoctor.Text = doctor.Address.Number;
@@ -132,6 +141,9 @@ namespace SRCM.Desktop.Screens
             EstadoTextBoxDoctor.Text= doctor.Address.State;
 
             _addressId = doctor.AddressId;
+
+            ButtonRegisterNewDoctor.Visibility = Visibility.Hidden;
+            ButtonRegisterDoctor.Content = "Salvar";
         }
     }
 }

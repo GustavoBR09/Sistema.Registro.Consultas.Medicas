@@ -1,4 +1,5 @@
 ﻿using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,19 @@ namespace SRCM.Desktop.Screens
         {
             var staff = await _apiService.GetStaffs();
             DataGridStaff.ItemsSource = staff;
+        }
+
+        private void DataGridStaff_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridStaff.SelectedItem != null) {
+                var staffModel = DataGridStaff.SelectedItem as StaffModel;
+
+                if (staffModel != null)
+                {
+                    StaffRegister staffRegister = new StaffRegister(_apiService, staffModel.Id);
+                    staffRegister.Show();
+                };
+            };
         }
     }
 }

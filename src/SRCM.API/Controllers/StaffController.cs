@@ -22,10 +22,18 @@ namespace SRCM.API.Controllers
             var result = _staffAppServices.Search(a => true);
             return Ok(result);
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("model/{id}")]
         public ActionResult<StaffModel> Get(Guid id)
         {
             var result = _staffAppServices.GetModelById(id);
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<StaffViewModel> GetById(Guid id)
+        {
+            var result = _staffAppServices.GetById(id);
             return Ok(result);
         }
         [HttpPost]

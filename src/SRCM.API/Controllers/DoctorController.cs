@@ -23,9 +23,9 @@ namespace SRCM.API.Controllers
             return Ok(result);
         }
         [HttpGet("{id}")]
-        public ActionResult<DoctorModel> Get(Guid id)
+        public ActionResult<DoctorViewModel> Get(Guid id)
         {
-            var result = _doctorAppServices.GetModelById(id);
+            var result = _doctorAppServices.GetById(id);
             return Ok(result);
         }
         [HttpPost]

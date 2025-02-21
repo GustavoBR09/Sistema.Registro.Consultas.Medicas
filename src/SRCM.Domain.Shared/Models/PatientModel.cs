@@ -9,7 +9,7 @@ namespace SRCM.Domain.Shared.Models
 {
     public class PatientModel
     {
-        public Guid Guid { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Birthday { get; set; }
         public string CPF { get; set; }

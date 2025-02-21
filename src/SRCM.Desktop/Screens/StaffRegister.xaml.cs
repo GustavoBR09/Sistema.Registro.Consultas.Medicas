@@ -115,23 +115,23 @@ namespace SRCM.Desktop.Screens
         private async void UpdateMode()
         {
             //TODO 1. Buscar informações do banco4
-            var Staff = await _apiService.GetStaffById(_id.Value);
+            var staff = await _apiService.GetStaffById(_id.Value);
             // 2. Inserir informações nos campos
-            NameTextBoxStaff.Text = Staff.Name;
-            DatePickerData.SelectedDate = Staff.Birthday;
-            EmailTextBoxStaff.Text = Staff.Email;
-            CPFTextBoxStaff.Text = Staff.Cpf;
-            WorkCardTextBoxStaff.Text = Staff.CarteiraTrabalho;
-            ComboBoxStaff.SelectedValue = Staff.Position;
-            StreetTextBoxStaff.Text = Staff.Address.Street;
-            ComplementTextBoxStaff.Text = Staff.Address.Complement;
-            NumberTextBoxStaff.Text = Staff.Address.Number;
-            NeighborhoodTextBoxStaff.Text = Staff.Address.Neighborhood;
-            CEPTextBoxStaff.Text = Staff.Address.PostalCode;
-            CityTextBoxStaff.Text = Staff.Address.City;
-            EstadoTextBoxStaff.Text = Staff.Address.State;
+            NameTextBoxStaff.Text = staff.Name;
+            DatePickerData.SelectedDate = Convert.ToDateTime(staff.Birthday);
+            EmailTextBoxStaff.Text = staff.Email;
+            CPFTextBoxStaff.Text = staff.Cpf;
+            WorkCardTextBoxStaff.Text = staff.CarteiraTrabalho;
+            ComboBoxStaff.SelectedValue = (Positions)staff.Position;
+            StreetTextBoxStaff.Text = staff.Address.Street;
+            ComplementTextBoxStaff.Text = staff.Address.Complement;
+            NumberTextBoxStaff.Text = staff.Address.Number;
+            NeighborhoodTextBoxStaff.Text = staff.Address.Neighborhood;
+            CEPTextBoxStaff.Text = staff.Address.PostalCode;
+            CityTextBoxStaff.Text = staff.Address.City;
+            EstadoTextBoxStaff.Text = staff.Address.State;
 
-            _addressId = Staff.AddressId;
+            _addressId = staff.AddressId;
         }
     }
 }

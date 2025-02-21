@@ -35,7 +35,7 @@
             </Button.RenderTransform>
         </Button>
         <TextBox x:Name="SearchTextBoxDoctor" HorizontalAlignment="Left" Margin="35,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" FontSize="22" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE"/>
-        <DataGrid x:Name="DataGridDoctor" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="248" Margin="0,147,0,0" VerticalAlignment="Top" Width="732" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE">
+        <DataGrid x:Name="DataGridDoctor" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="248" Margin="0,147,0,0" VerticalAlignment="Top" Width="732" d:ItemsSource="{d:SampleData ItemCount=5}" BorderThickness="4,4,4,4" BorderBrush="#FF84A6CE" SelectionChanged="DataGridDoctor_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="Id" Header="Id" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="Name" Header="Nome" Binding="{Binding Name}"/>

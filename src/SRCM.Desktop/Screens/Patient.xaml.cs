@@ -1,4 +1,5 @@
 ﻿using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,8 +43,25 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var patient = await _apiService.GetPatients();
-            DataGridPatients.ItemsSource = patient;
+            var patients = await _apiService.GetPatients();
+            DataGridPatients.ItemsSource = patients;
+        }
+
+        private void DataGridPatients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Verifiquei se existe um item selecionado
+            if(DataGridPatients.SelectedItem != null)
+            {
+                //Peguei o item selecionado e fiz uma converção explícita para um PatientModel já que ele tem exatamente as propriedades de um
+                var patientModel = DataGridPatients.SelectedItem as PatientModel;
+                //Verifiquei se meu objeto conseguiu ser convertido e portanto tem valores
+                if (patientModel != null) 
+                {
+                    //Chamo o form de registro mas agora passando o id do paciente para que ele possa abrir com os dados
+                    PatientRegister patientRegister = new PatientRegister(_apiService, patientModel.Id);
+                    patientRegister.Show();
+                }
+            }
         }
     }
 }

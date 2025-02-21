@@ -1,4 +1,5 @@
 ﻿using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,18 @@ namespace SRCM.Desktop.Screens
         {
             var doctors = await _apiService.GetDoctors();
             DataGridDoctor.ItemsSource = doctors;
+        }
+
+        private void DataGridDoctor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridDoctor.SelectedItem != null)
+            {
+                var doctorModel = DataGridDoctor.SelectedItem as DoctorModel;
+                if (doctorModel != null) { 
+                    DoctorRegister doctorRegister = new DoctorRegister(_apiService, doctorModel.Id);
+                    doctorRegister.Show();
+                }
+            }
         }
     }
 }
