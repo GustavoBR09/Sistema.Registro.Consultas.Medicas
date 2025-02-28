@@ -1,4 +1,7 @@
-﻿using SRCM.Desktop.Interfaces;
+﻿using SRCM.Core.Utils;
+using SRCM.Desktop.Interfaces;
+using SRCM.Desktop.Utils;
+using SRCM.Domain.Shared;
 using SRCM.Domain.Shared.Models;
 using System;
 using System.Collections.Generic;
@@ -42,20 +45,46 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Load();
+        }
+
+        private async void Load()
+        {
             var staff = await _apiService.GetStaffs();
             DataGridStaff.ItemsSource = staff;
         }
 
         private void DataGridStaff_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridStaff.SelectedItem != null) {
+            if (DataGridStaff.SelectedItem != null)
+            {
                 var staffModel = DataGridStaff.SelectedItem as StaffModel;
 
                 if (staffModel != null)
                 {
-                    StaffRegister staffRegister = new StaffRegister(_apiService, staffModel.Id);
-                    staffRegister.Show();
-                };
+                    CustomMessageBox messageBox = new CustomMessageBox($"Deseja editar ou excluir o funcionário: {staffModel.Name}");
+                    var result = messageBox.ShowDialog();
+                    if (result == true)
+                    {
+                        switch (messageBox.Result)
+                        {
+                            case CustomMessageBoxResult.Editar:
+
+                                StaffRegister staffRegister = new StaffRegister(_apiService, staffModel.Id);
+
+                                staffRegister.Show();
+                                break;
+                            case CustomMessageBoxResult.Excluir:
+                                _apiService.DeleteStaff(staffModel.Id);
+                                Load();
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um funcionário válido");
+                }
             };
         }
     }

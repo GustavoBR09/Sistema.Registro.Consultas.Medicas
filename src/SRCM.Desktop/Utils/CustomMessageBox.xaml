@@ -1,0 +1,25 @@
+﻿<Window x:Class="SRCM.Desktop.Utils.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Confirmação"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="ToolWindow">
+    <Grid Margin="20">
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock x:Name="txtMessage"
+                       Text="Deseja editar ou excluir este item?"
+                       TextWrapping="Wrap"
+                       FontSize="14"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnEdit" Content="Editar" Width="80" Margin="5" Click="BtnEdit_Click"/>
+                <Button x:Name="btnDelete" Content="Excluir" Width="80" Margin="5" Click="BtnDelete_Click"/>
+                <Button x:Name="btnCancel" Content="Cancelar" Width="80" Margin="5" Click="BtnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

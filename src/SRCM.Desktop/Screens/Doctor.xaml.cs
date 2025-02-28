@@ -1,5 +1,8 @@
-﻿using SRCM.Desktop.Interfaces;
+﻿using SRCM.Core.Utils;
+using SRCM.Desktop.Interfaces;
+using SRCM.Desktop.Utils;
 using SRCM.Domain.Shared;
+using SRCM.Domain.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +45,10 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Load();
+        }
+        private async void Load()
+        {
             var doctors = await _apiService.GetDoctors();
             DataGridDoctor.ItemsSource = doctors;
         }
@@ -51,9 +58,30 @@ namespace SRCM.Desktop.Screens
             if (DataGridDoctor.SelectedItem != null)
             {
                 var doctorModel = DataGridDoctor.SelectedItem as DoctorModel;
-                if (doctorModel != null) { 
-                    DoctorRegister doctorRegister = new DoctorRegister(_apiService, doctorModel.Id);
-                    doctorRegister.Show();
+                if (doctorModel != null)
+                {
+                    var messageBox = new CustomMessageBox($"Deseja editar ou excluir o médico: {doctorModel.Name}");
+                    var result = messageBox.ShowDialog();
+                    if (result == true)
+                    {
+                        switch (messageBox.Result)
+                        {
+                            case CustomMessageBoxResult.Editar:
+
+                                DoctorRegister doctorRegister = new DoctorRegister(_apiService, doctorModel.Id);
+
+                                doctorRegister.Show();
+                                break;
+                            case CustomMessageBoxResult.Excluir:
+                                _apiService.DeleteDoctor(doctorModel.Id);
+                                Load();
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um médico válido");
                 }
             }
         }

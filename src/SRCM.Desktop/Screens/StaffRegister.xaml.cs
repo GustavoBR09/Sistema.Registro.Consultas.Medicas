@@ -97,7 +97,15 @@ namespace SRCM.Desktop.Screens
             staffViewModel.Position = (int)ComboBoxStaff.SelectedValue;
             staffViewModel.AddressId = addressViewModel.Id;
 
-            staffViewModel = await _apiService.AddStaff(staffViewModel);
+            if (_id != null)
+            {
+                staffViewModel.Id = _id.Value;
+                staffViewModel = await _apiService.UpdateStaff(staffViewModel);
+            }
+            else
+            {
+                staffViewModel = await _apiService.AddStaff(staffViewModel);
+            }
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -132,6 +140,8 @@ namespace SRCM.Desktop.Screens
             EstadoTextBoxStaff.Text = staff.Address.State;
 
             _addressId = staff.AddressId;
+            ButtonRegisterNewStaff.Visibility = Visibility.Hidden;
+            ButtonRegisterStaff.Content = "Salvar";
         }
     }
 }

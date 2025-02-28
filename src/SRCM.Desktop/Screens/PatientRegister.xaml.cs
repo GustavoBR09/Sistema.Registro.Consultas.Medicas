@@ -103,7 +103,15 @@ namespace SRCM.Desktop.Screens
             patientViewModel.CPF = CPFTextBoxPatient.Text;
             patientViewModel.AddressId = addressViewModel.Id;
 
-            patientViewModel = await _apiService.AddPatient(patientViewModel);
+            if (_id != null)
+            {
+                patientViewModel.Id = _id.Value;
+                patientViewModel = await _apiService.UpdatePatient(patientViewModel);
+            }
+            else
+            {
+                patientViewModel = await _apiService.AddPatient(patientViewModel);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -129,6 +137,9 @@ namespace SRCM.Desktop.Screens
             StateTextBoxPatient.Text = patient.Address.State;
 
             _addressId = patient.AddressId;
+
+            ButtonRegisterNewPatient.Visibility = Visibility.Hidden;
+            ButtonRegisterPatient.Content = "Salvar";
         }
     }
 }
