@@ -38,9 +38,18 @@ namespace SRCM.Desktop.Screens
             this.Close();
         }
 
-        private void ButtonSearchStaff_Click(object sender, RoutedEventArgs e)
+        private async void ButtonSearchStaff_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(SearchTextBoxStaff.Text))
+            {
+                Load();
+            }
+            else
+            {
+                var staff = await _apiService.GetStaffUsingFilter(SearchTextBoxStaff.Text);
+                DataGridStaff.ItemsSource = staff;
+                this.DataContext = this;
+            }
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)

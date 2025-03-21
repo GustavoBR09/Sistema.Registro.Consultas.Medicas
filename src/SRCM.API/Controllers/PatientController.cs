@@ -29,6 +29,17 @@ namespace SRCM.API.Controllers
             var result = _patientAppServices.GetById(id);
             return Ok(result);
         }
+
+        [HttpGet("search/{filter}")]
+        public ActionResult<IEnumerable<PatientModel>> Get(string filter)
+        {
+            var result = _patientAppServices.Search(a => a.Name.ToUpper().Contains(filter.ToUpper()) || 
+            a.CPF == filter || 
+            a.Email.ToUpper().Contains(filter.ToUpper()));
+
+            return Ok(result);
+        }
+
         [HttpPost]
         public ActionResult Post([FromBody] PatientViewModel patientViewModel)
         {

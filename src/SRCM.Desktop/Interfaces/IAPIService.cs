@@ -65,6 +65,9 @@ namespace SRCM.Desktop.Interfaces
         [Get("/api/doctor/{id}")]
         Task<DoctorViewModel> GetDoctorById(Guid id);
 
+        [Get("/api/doctor/search/{filter}")]
+        Task<IEnumerable<DoctorModel>> GetDoctorUsingFilter(string filter);
+
         [Post("/api/doctor")]
         Task<DoctorViewModel> AddDoctor([Body] DoctorViewModel doctor);
 
@@ -82,6 +85,9 @@ namespace SRCM.Desktop.Interfaces
         [Get("/api/patient/{id}")]
         Task<PatientViewModel> GetPatientById(Guid id);
 
+        [Get("/api/patient/search/{filter}")]
+        Task<IEnumerable<PatientModel>> GetPatientUsingFilter(string filter);
+
         [Post("/api/patient")]
         Task<PatientViewModel> AddPatient([Body] PatientViewModel patient);
 
@@ -98,6 +104,9 @@ namespace SRCM.Desktop.Interfaces
 
         [Get("/api/staff/{id}")]
         Task<StaffViewModel> GetStaffById(Guid id);
+
+        [Get("/api/staff/search/{filter}")]
+        Task<IEnumerable<StaffModel>> GetStaffUsingFilter(string filter);
 
         [Post("/api/staff")]
         Task<StaffViewModel> AddStaff([Body] StaffViewModel staff);

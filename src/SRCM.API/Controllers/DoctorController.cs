@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Domain.Shared.ViewModel;
 using SRCM.Domain.Shared;
+using SRCM.Domain.Shared.Models;
+using SRCM.Services.AppService.Services;
 
 namespace SRCM.API.Controllers
 {
@@ -26,6 +28,16 @@ namespace SRCM.API.Controllers
         public ActionResult<DoctorViewModel> Get(Guid id)
         {
             var result = _doctorAppServices.GetById(id);
+            return Ok(result);
+        }
+        [HttpGet("search/{filter}")]
+        public ActionResult<IEnumerable<DoctorModel>> Get(string filter)
+        {
+            var result = _doctorAppServices.Search(a => a.Name.ToUpper().Contains(filter.ToUpper()) ||
+            a.Cpf == filter ||
+            a.Email.ToUpper().Contains(filter.ToUpper()) ||
+            a.Crm == filter);
+
             return Ok(result);
         }
         [HttpPost]

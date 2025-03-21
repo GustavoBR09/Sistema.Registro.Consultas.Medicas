@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SRCM.Services.AppService.Interfaces;
 using SRCM.Domain.Shared.ViewModel;
 using SRCM.Domain.Shared.Models;
+using SRCM.Services.AppService.Services;
 
 namespace SRCM.API.Controllers
 {
@@ -34,6 +35,16 @@ namespace SRCM.API.Controllers
         public ActionResult<StaffViewModel> GetById(Guid id)
         {
             var result = _staffAppServices.GetById(id);
+            return Ok(result);
+        }
+
+        [HttpGet("search/{filter}")]
+        public ActionResult<IEnumerable<StaffModel>> Get(string filter)
+        {
+            var result = _staffAppServices.Search(a => a.Name.ToUpper().Contains(filter.ToUpper()) ||
+            a.Cpf == filter ||
+            a.Email.ToUpper().Contains(filter.ToUpper()));
+
             return Ok(result);
         }
         [HttpPost]

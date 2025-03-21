@@ -3,6 +3,7 @@ using SRCM.Desktop.Interfaces;
 using SRCM.Desktop.Utils;
 using SRCM.Domain.Shared.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Shapes;
 
 namespace SRCM.Desktop.Screens
@@ -38,9 +40,19 @@ namespace SRCM.Desktop.Screens
             this.Close();
         }
 
-        private void ButtonSearchPatient_Click(object sender, RoutedEventArgs e)
+        private async void ButtonSearchPatient_Click(object sender, RoutedEventArgs e)
         {
-
+             if(string.IsNullOrEmpty(SearchTextBoxPatient.Text))
+            {
+                Load();
+            }
+            else
+            {
+                var patients = await _apiService.GetPatientUsingFilter(SearchTextBoxPatient.Text);
+                DataGridPatients.ItemsSource = patients;
+                this.DataContext = this;
+            }
+            
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -51,6 +63,7 @@ namespace SRCM.Desktop.Screens
         {
             var patients = await _apiService.GetPatients();
             DataGridPatients.ItemsSource = patients;
+            this.DataContext = this;
         }
 
         private void DataGridPatients_SelectionChanged(object sender, SelectionChangedEventArgs e)

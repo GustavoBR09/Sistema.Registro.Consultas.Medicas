@@ -38,9 +38,18 @@ namespace SRCM.Desktop.Screens
             this.Close();
         }
 
-        private void ButtonSearchDoctor_Click(object sender, RoutedEventArgs e)
+        private async void ButtonSearchDoctor_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(SearchTextBoxDoctor.Text))
+            {
+                Load();
+            }
+            else
+            {
+                var doctors = await _apiService.GetDoctorUsingFilter(SearchTextBoxDoctor.Text);
+                DataGridDoctor.ItemsSource = doctors;
+                this.DataContext = this;
+            }
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
