@@ -1,4 +1,5 @@
 ﻿using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterNewAppointment_Click(object sender, RoutedEventArgs e)
         {
+            SaveAppointmentScheduling();
             ComboBoxPatient.SelectedIndex = 0;
             ComboBoxDoctor.SelectedIndex = 0;
             ComboBoxStatus.SelectedIndex = 0;
@@ -46,10 +48,28 @@ namespace SRCM.Desktop.Screens
 
         private void ButtonRegisterAppointment_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: Salvar dados
+            SaveAppointmentScheduling();
             Appointment appointment = new Appointment(_apiService);
             appointment.Show();
             this.Close();
+        }
+
+        private async void SaveAppointmentScheduling()
+        {
+            AppointmentViewModel appointmentViewModel = new AppointmentViewModel();
+            appointmentViewModel.IdPatient = (Guid)ComboBoxPatient.SelectedValue;
+            appointmentViewModel.IdDoctor = (Guid)ComboBoxDoctor.SelectedValue;
+            appointmentViewModel.Type = (int)ComboBoxType.SelectedValue;
+            appointmentViewModel.Observation = ObservationTextBox.Text;
+
+            appointmentViewModel = await _apiService.AddAppointment(appointmentViewModel);
+
+            AppointmentSchedulingViewModel appointmentSchedulingViewModel = new AppointmentSchedulingViewModel();
+            appointmentSchedulingViewModel.IdAppointment = appointmentViewModel.Id;
+            appointmentSchedulingViewModel.Status = appointmentSchedulingViewModel.Status;
+            appointmentSchedulingViewModel.Date = appointmentSchedulingViewModel.Date;
+
+            appointmentSchedulingViewModel = await _apiService.AddAppointmentScheduling(appointmentSchedulingViewModel);
         }
     }
 }

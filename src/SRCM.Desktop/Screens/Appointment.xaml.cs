@@ -34,15 +34,28 @@ namespace SRCM.Desktop.Screens
             this.Close();
         }
 
-        private void ButtonSearchAppointment_Click(object sender, RoutedEventArgs e)
+        private async void ButtonSearchAppointment_Click(object sender, RoutedEventArgs e)
         {
-
+            DateTime? date = null;
+            DateTime dateAux;
+            string? name = null;
+            if (DateTime.TryParse(SearchTextBoxAppointment.Text, out dateAux))
+            {
+                date = dateAux;
+            }
+            else
+            {
+                name = SearchTextBoxAppointment.Text;
+            }
+            var appointments = await _apiService.GetExibitionSchedules(date, null);
+            DataGridAppointment.ItemsSource = appointments;
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var appointments = await _apiService.GetAppointments();
+            var appointments = await _apiService.GetExibitionSchedules(null, null);
             DataGridAppointment.ItemsSource = appointments;
+
         }
     }
 }

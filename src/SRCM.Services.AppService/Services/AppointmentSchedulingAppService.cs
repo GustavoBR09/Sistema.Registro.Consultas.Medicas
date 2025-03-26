@@ -11,6 +11,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using LinqKit;
+using SRCM.Domain.Shared.Models;
 
 namespace SRCM.Services.AppService.Services
 {
@@ -77,6 +79,32 @@ namespace SRCM.Services.AppService.Services
             Commit();
             var appointmentSchedulingViewModel = _mapper.Map<AppointmentSchedulingViewModel>(appointmentScheduling);
             return appointmentSchedulingViewModel;
+        }
+
+        public IEnumerable<AppointmentSchedulingModel> GetAppointmentScheduling(DateTime? date, string name)
+        {
+            Expression<Func<AppointmentScheduling, bool>> predicate = a => true;
+            if (date != null) {
+                predicate = predicate.And(a => a.Date == date.Value);
+            }
+            if (!string.IsNullOrEmpty(name))
+            {
+                predicate = predicate.And(a => a.Appointment.Doctor.Name.Contains(name) || a.Appointment.Patient.Name.Contains(name));
+            }
+            var appointments = _appointmentSchedulingRepository.Search(predicate);
+            List<AppointmentSchedulingModel> listReturn = new List<AppointmentSchedulingModel>();
+            foreach (var appointment in appointments) {
+                listReturn.Add(new AppointmentSchedulingModel
+                {
+                    AppointmentId = appointment.IdAppointment, 
+                    SchedulingId = appointment.Id,
+                    DateScheduling = appointment.Date,
+                    DoctorName = appointment.Appointment.Doctor.Name,
+                    PatientName = appointment.Appointment.Patient.Name,
+                    Type = appointment.Appointment.Type.ToString(),
+                });
+            }
+            return listReturn;
         }
     }
 }

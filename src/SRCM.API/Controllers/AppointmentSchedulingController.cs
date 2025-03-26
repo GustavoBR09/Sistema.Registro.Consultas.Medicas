@@ -46,5 +46,11 @@ namespace SRCM.API.Controllers
             _appointmentSchedulingAppServices.Remove(id);
             return Ok();
         }
+        [HttpGet("exibition/{date}/{name}")]
+        public ActionResult GetExibitionSchedules(DateTime? date, string? name)
+        {
+            var result = _appointmentSchedulingAppServices.GetAppointmentScheduling(date, name);
+            return Ok(result);
+        }
     }
 }

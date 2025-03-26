@@ -15,7 +15,7 @@ namespace SRCM.Domain.Shared.ViewModel
         public Guid IdPatient { get; set; }
         [Required(ErrorMessage = "O Tipo de Consulta é Obrigatório")]
         [DisplayName("Tipo")]
-        public AppointmentType Type { get; set; }
+        public int Type { get; set; }
         [MaxLength(250, ErrorMessage = "A Observação Deve Ter No Máximo 250 Caracteres")]
         [DisplayName("Observação")]
         public string Observation { get; set; }

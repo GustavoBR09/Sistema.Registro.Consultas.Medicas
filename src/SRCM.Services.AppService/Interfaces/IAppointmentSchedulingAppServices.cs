@@ -1,4 +1,5 @@
 ﻿using SRCM.Domain.Entities;
+using SRCM.Domain.Shared.Models;
 using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,6 @@ namespace SRCM.Services.AppService.Interfaces
         AppointmentSchedulingViewModel Update(AppointmentSchedulingViewModel viewModel);
         void Remove(Guid id);
         void Remove(Expression<Func<AppointmentScheduling, bool>> expression);
+        IEnumerable<AppointmentSchedulingModel> GetAppointmentScheduling(DateTime? date, string name);
     }
 }
