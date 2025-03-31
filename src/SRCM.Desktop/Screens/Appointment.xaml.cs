@@ -53,7 +53,7 @@ namespace SRCM.Desktop.Screens
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var appointments = await _apiService.GetExibitionSchedules(null, null);
+            var appointments = await _apiService.GetExibitionSchedules();
             DataGridAppointment.ItemsSource = appointments;
 
         }

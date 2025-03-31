@@ -1,4 +1,6 @@
-﻿using SRCM.Desktop.Interfaces;
+﻿using SRCM.Core.Utils;
+using SRCM.Desktop.Interfaces;
+using SRCM.Domain.Shared.Enums;
 using SRCM.Domain.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -56,6 +58,12 @@ namespace SRCM.Desktop.Screens
 
         private async void SaveAppointmentScheduling()
         {
+            if (DatePickerData.SelectedDate == null)
+            {
+                MessageBox.Show("A data é obrigatória.");
+                return;
+            }
+
             AppointmentViewModel appointmentViewModel = new AppointmentViewModel();
             appointmentViewModel.IdPatient = (Guid)ComboBoxPatient.SelectedValue;
             appointmentViewModel.IdDoctor = (Guid)ComboBoxDoctor.SelectedValue;
@@ -70,6 +78,26 @@ namespace SRCM.Desktop.Screens
             appointmentSchedulingViewModel.Date = appointmentSchedulingViewModel.Date;
 
             appointmentSchedulingViewModel = await _apiService.AddAppointmentScheduling(appointmentSchedulingViewModel);
+        }
+        private async Task LoadData()
+        {
+            var doctors = await _apiService.GetDoctors();
+            ComboBoxDoctor.ItemsSource = doctors;
+            ComboBoxDoctor.DisplayMemberPath = "Name";
+            ComboBoxDoctor.SelectedValuePath = "Id";
+
+            var patients = await _apiService.GetPatients();
+            ComboBoxPatient.ItemsSource = patients;
+            ComboBoxPatient.DisplayMemberPath = "Name";
+            ComboBoxPatient.SelectedValuePath = "Id";
+
+            ComboBoxStatus.ItemsSource = EnumHelp.EnumToList<AppointmentStatus>();
+            ComboBoxType.ItemsSource = EnumHelp.EnumToList<AppointmentType>();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -118,7 +118,9 @@ namespace SRCM.Desktop.Interfaces
         Task DeleteStaff(Guid id);
         #endregion
 
-        [Get("api/appointment-scheduling/exibition/{date}/{name}")]
+        [Get("/api/appointment-scheduling/exibition/{date}/{name}")]
         Task<IEnumerable<AppointmentSchedulingModel>> GetExibitionSchedules(DateTime? date, string? name);
+        [Get("/api/appointment-scheduling/exibition")]
+        Task<IEnumerable<AppointmentSchedulingModel>> GetExibitionSchedules();
     }
 }

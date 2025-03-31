@@ -52,5 +52,17 @@ namespace SRCM.API.Controllers
             var result = _appointmentSchedulingAppServices.GetAppointmentScheduling(date, name);
             return Ok(result);
         }
+        [HttpGet("exibition/{date}")]
+        public ActionResult GetExibitionSchedules(DateTime? date)
+        {
+            var result = _appointmentSchedulingAppServices.GetAppointmentScheduling(date, null);
+            return Ok(result);
+        }
+        [HttpGet("exibition")]
+        public ActionResult GetExibitionSchedules()
+        {
+            var result = _appointmentSchedulingAppServices.GetAppointmentScheduling(null, null);
+            return Ok(result);
+        }
     }
 }
